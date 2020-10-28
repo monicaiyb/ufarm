@@ -43,9 +43,11 @@
     
                     <div class="col-md-6 main">
                         <form name="login" action="#" method="#">
-                            <h3>Register Farmer one</h3>
-    
-                            <input
+							<h3>Register Farmer one</h3>
+							<div class="form-row">
+								<div class="col">
+								  <input type="text" class="box" placeholder="First name">
+								  <input
                                 class="box"
                                 type="text"
                                 name="name"
@@ -62,6 +64,30 @@
                                 placeholder="Password "
                             
                             /><span id="error_password"></span><br />
+								</div>
+								<div class="col">
+								  <input type="text" class="box" placeholder="Last name">
+								  <input
+                                class="box"
+                                type="text"
+                                name="name"
+                                id="user_name"
+                                placeholder="Name"
+                                
+                            /><span id="error_user"></span><br />
+    
+                            <input
+                                class="box"
+                                type="password"
+                                name="password"
+                                id="password"
+                                placeholder="Password "
+                            
+                            /><span id="error_password"></span><br />
+								</div>
+							  </div>
+    
+                            
     
                             <input  
                                 type="submit"
@@ -69,11 +95,20 @@
                                 id="submitDetails"
                                 name="submitDetails"
                                 value="Submit"
-                            /><br />    
+							/><br /> 
+							<div class="form-row">
+								<div class="col">
+								  <input type="text" class="form-control" placeholder="First name">
+								</div>
+								<div class="col">
+								  <input type="text" class="form-control" placeholder="Last name">
+								</div>
+							  </div>   
                         </form>
                     </div>
     
-                    <div class="col-md-3"></div>
+					<div class="col-md-3"></div>
+					
                 </div>
             </div>
 				
