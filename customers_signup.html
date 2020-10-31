@@ -39,27 +39,35 @@
                 <br>
                 <br>
                 <div class="row"> 
-                    <div class="col-md-3"> 
+                    <div class="col-md-4"> 
                                   
                     </div> 
                               
-                    <div class="col-md-6 main"> 
+                    <div class="col-md-4 main"> 
                                   
-                        <form name="signUpForm" action="#" method="POST"> 
+                        <form name="signUpForm" action="#" method="#"> 
                                   
                         <h1> Signup form </h1> 
                                           
-                        <input class="box" type="text" name="name" id="name" 
-                        placeholder="Name" /><br> 
-                                          
+                        <input class="box" type="text" name="fname" id="fname" 
+						placeholder="First Name" />
+						<span id="fname_err"></span><br> 
+						 
+						<input class="box" type="text" name="lname" id="lname" 
+						placeholder="Last Name" />
+						<span id="lname_err"></span><br> 
+
                         <input class="box" type="email" name="email" id="email" 
-                        placeholder="E-Mail " /><br>
+						placeholder="E-Mail " />
+						<span id="signup_email_err"></span><br>
 
                         <input class="box" type="text" name="phone" id="phone"  
-                        placeholder="Phone Number " /><br> 
+						placeholder="Phone Number " />
+						<span id="signup_phone_err"></span><br> 
                                           
                         <input class="box" type="password" name="password" 
-                        id="password" placeholder="Password " /><br> 
+						id="password" placeholder="Password " />
+						<span id="signup_password_err"></span><br> 
 
                         <br> 
                         <input type="submit" id="submitDetails"  
@@ -70,7 +78,7 @@
                     </div> 
                               
                               
-                    <div class="col-md-3"> 
+                    <div class="col-md-4"> 
                     </div> 
                               
                 </div> 

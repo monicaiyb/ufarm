@@ -6,7 +6,7 @@ const loginValidation =()=>{
     const errorPassword=document.getElementById("error_password");
     
     userName.focus();
-    alert("hello")
+    
     
     //Regular expression for validating the email and password before sending to database.
     let userNameRegex=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -19,59 +19,91 @@ const loginValidation =()=>{
     }else{
         userName.style.border="1px solid red";
         errorName.innerHTML = "Sorry your id is wrong!";
-        errorName.style.color="red"
-        return false
+        errorName.style.color="red";
+        return false;
     }
+    // Checks if password format matches required format
     if(password.value.match(passwordRegex)){
-        alert("right input");
-        // console.log(password.value);
+        password.style.border="1px solid green";
 
-        password.style.border="5px solid green";
     }else{
         password.style.border="1px solid red";
         errorPassword.innerHTML = "Sorry your id is wrong!";
-        errorPassword.style.color="red"
-        return false
-    }
-    if(userName.value==""&&password.value==""){
-        alert("Empty fields")
-        password.style.border="5px solid red";
-        userName.style.border="5px solid red";
-        userName.focus();
-        return false
+        errorPassword.style.color="red";
+        return false;
     }
 }
 
 // This function works on validation of signup for
-// const signUpValidation=()=>{
-//     const nameUser=document.signUpForm.name;
-//     const email=document.signUpForm.email;
-//     const password=document.signUpForm.password;
-//     const phone=document.signUpForm.phone;
+const signUpValidation=()=>{
+    const fname=document.signUpForm.fname;
+    const lname=document.signUpForm.lname;
+    const email=document.signUpForm.email;
+    const password=document.signUpForm.password;
+    const phone=document.signUpForm.phone;
 
-//     let checkNameUser=/^[0-9a-zA-Z]+$/;
-//     let checkEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-//     let checkPassword=/^\w{7,12}/
-//     let checkPhone=/^[0-9]{3}/
-//     if (nameUser.value.match(checkNameUser)) {
-//         alert("correct name input");
-//         nameUser.style.border="3px solid blue";
-//     } else {
-//         alert("wrong name input");
-//         email.style.border="3px solid red";
-//     }
-//     if (checkEmail.test(email.value)) {
-//         alert("correct email input");
-//         email.style.border="3px solid blue";
-//     } else {
-//         alert("wrong email input");
-//         email.style.border="3px solid red";
-//     }
-//     if (checkPassword.test(password.value)==true) {
-//         alert("correct password input");
-//         password.style.border="3px solid blue";
-//     } else {
-//         alert("wrong email input");
-//         password.style.border="3px solid red";
-//     }
-// }
+    //Declaring variables for error
+    const fNameErr=document.getElementById("fname_err");
+    const lNameErr=document.getElementById("lname_err");
+    const sEmailErr=document.getElementById("signup_email_err");
+    const sPhoneErr=document.getElementById("signup_phone_err");
+    const sPasswordErr=document.getElementById("signup_password_err");
+    
+
+
+
+    let checkNameUser=/^[0-9a-zA-Z]+$/;
+    let checkEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    let checkPassword=/^\w{7,12}/
+    let checkPhone=/^[0-9]{3}/
+
+    //This condition checks validation for fname
+    if (fname.value.match(checkNameUser)) {
+        nameUser.style.border="1px solid green";
+    } else {
+        fname.style.border="1px solid red";
+        // fNameErr.textContent="Please enter a valid name";
+        fNameErr.innerHTML="Please enter a valid name";
+        fNameErr.style.border="1px solid red";
+    }
+    //This condition checks validation for lname
+    if (lname.value.match(checkNameUser)) {
+        lname.style.border="1px solid green";
+    } else {
+        lname.style.border="1px solid red";
+        lNameErr.innerHTML="Please enter a valid name";
+        lNameErr.style.border="1px solid red";
+        
+    }
+
+    //This condition checks validation for email
+    if (checkEmail.test(email.value)) {
+        email.style.border="1px solid green";
+    } else {
+        // alert("wrong email input");
+        // email.style.border="3px solid red";
+        email.style.border="1px solid red";
+        sEmailErr.innerHTML="Please enter a valid name";
+        sEmailErr.style.border="1px solid red";
+    }
+
+    //This condition checks validation for phone
+    if (checkPassword.test(password.value)==true) {
+        password.style.border="1px solid blue";
+    } else {
+        // alert("wrong email input");
+        password.style.border="1px solid red";
+        sPasswordErr.innerHTML="Please enter a valid name";
+        sPasswordErr.style.border="1px solid red";
+    }
+
+    //This condition checks validation for password
+    if (checkPhone.test(phone.value)==true) {
+        password.style.border="1px solid blue";
+    } else {
+        // alert("wrong email input");
+        phone.style.border="1px solid red";
+        sPhoneErr.innerHTML="Please enter a valid name";
+        sPhoneErr.style.border="1px solid red";
+    }
+}

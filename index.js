@@ -36,8 +36,8 @@ app.get("/",(req,res)=>{
     res.sendFile(__dirname +"/index.html");
     console.log("Hello welcome my Ufarm project");
 })
-app.get("/",(req,res)=>{
-  res.sendFile(__dirname+"/customer_login.html")
+app.get("/customers_login",(req,res)=>{
+  res.sendFile(__dirname+"/customers_login.html")
 })
 
 

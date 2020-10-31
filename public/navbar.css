@@ -1,0 +1,318 @@
+
+header img {
+    height: 80px;
+    margin-left: 20px;
+}
+/* body {
+    height: 80vh;
+    background-image: url('./images/kcca_kyanja1.jpg');
+    background-size: cover;
+    background-attachment: fixed;   
+    font-family: sans-serif;
+    margin-top: 80px;
+    padding: 0px;
+    
+} */
+
+
+
+main {
+    padding: 0%;
+    margin: 0 auto;
+    
+    color: white;
+    font-size: 40px;
+}
+
+/* header {
+    background-color:#f8f7f0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;   
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 #5f381ff1;
+} */
+
+header * {
+    display: inline;
+    
+}
+
+header li {
+    margin: 20px;
+    
+}
+header nav h1{
+    font-family: 'Helvetica', serif;
+   color: #5f381ff1; 
+   font-size: 60px;
+   font-weight: bolder;
+   
+}
+
+header li a {
+    font-family: 'Helvetica', serif;
+    font-weight: bold;
+    color: #5f381ff1; 
+    text-decoration: none;
+
+}
+
+
+button{
+    font-weight: bold;
+    font-family: 'Helvetica', serif;
+    margin: 20px;
+    float: right;
+    border: none;
+    color: #5f381ff1; 
+    
+}
+.main{ 
+    padding:0px; 
+    margin: 0%;
+    font-family: 'Helvetica', serif; 
+    box-shadow: 5px 5px 7px 5px  #5f381ff1; 
+      
+} 
+.main h1,h3{ 
+    font-size: 40px; 
+    text-align:center; 
+    font-family: 'Helvetica', serif; 
+      
+} 
+input{ 
+    font-family: 'Helvetica', serif; 
+    width: 100%; 
+    font-size: 20px; 
+    padding: 12px 20px; 
+    margin: 8px 0; 
+    border: none; 
+    border-bottom: 2px solid #5f381ff1; 
+} 
+input[type=submit] { 
+    font-family: 'Helvetica', serif; 
+    width: 100%; 
+    background-color: #5f381ff1; 
+    border: none; 
+    color: white; 
+    padding: 16px 32px; 
+    margin: 4px 2px; 
+    border-radius: 10px; 
+} 
+.container-fluid{
+    margin: auto 0;
+    padding: 0%;
+    color: white;
+    
+}
+#story_div{
+    background-color: rgba(131, 93, 86, 0.87);
+    padding: 0%;
+    margin: 0 auto ;
+}
+
+
+
+.lock{
+    padding:8px 11px;
+}
+.name{
+    width: 45%;
+    padding:8px 0 8px 40px;
+}
+
+.text-name{
+    width: 100%;
+    padding:8px 0 8px 40px;
+}
+
+.email{
+    padding: 8px;
+}
+.text-name, .name{
+    border: 1px solid #cccccc;
+    outline: none;
+    -webkit-transition: all 0.30s ease-in-out;
+      -moz-transition: all 0.30s ease-in-out;
+      -ms-transition: all 0.30s ease-in-out;
+      transition: all 0.30s ease-in-out;
+}
+.text-name:hover, .name:hover{
+    background-color: #fafafa;
+}
+.text-name:focus, .name:focus{
+    -webkit-box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
+      -moz-box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
+      box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
+      border: 1px solid #f5ba1a;
+      background: #fafafa;
+}
+.radio-button{
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+ .gender {
+    margin-right: 1em;
+}
+.gender:before {
+    content: "";
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    margin-right: 0.5em;
+    border-radius: 100%;
+    vertical-align: -3px;
+    border: 2px solid #cccccc;
+    padding: 0.15em;
+    background-color: transparent;
+    background-clip: content-box;
+    transition: all 0.2s ease;
+  }
+
+  .radio-button:hover + .gender:before {
+    border-color: #000;
+  }
+  .radio-button:checked + .gender:before {
+    background-color:#000;
+    border-color: #000;
+  }
+
+  .country{
+    display: inline-block;
+    width: 100%;
+    height: 35px;
+    padding: 0px 15px;
+    cursor: pointer;
+    color: #7b7b7b;
+    border: 1px solid #cccccc;
+    border-radius: 0;
+    background: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: all 0.2s ease;
+}
+.country::-ms-expand{
+    display: none;
+}
+.country:hover, .country:focus{
+    color: #000;
+      background: #fafafa;
+      border-color: #000;
+      outline: none;
+}
+.arrow {
+    position: absolute;
+    top: calc(50% - 4px);
+    right: 15px;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-width: 8px 5px 0 5px;
+    border-style: solid;
+    border-color: #7b7b7b transparent transparent transparent;
+ }
+  
+.country:hover +.arrow, .country:focus +.arrow{
+      border-top-color: #000;
+}
+.chack{
+    margin-right: 1em;
+        position: relative;
+}
+.chack::before{
+    content: "";
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    margin-right: 0.5em;
+    vertical-align: -2px;
+    border: 2px solid #cccccc;
+    padding: 0.12em;
+    background-color: transparent;
+    background-clip: content-box;
+    transition: all 0.2s ease;
+}
+.chack::after{
+    border-right: 2px solid #000;
+          border-top: 2px solid #0000;
+          content: "";
+          height: 20px;
+          left: 2px;
+          position: absolute;
+          top: 7px;
+          transform: scaleX(-1) rotate(135deg);
+          transform-origin: left top;
+          width: 7px;
+          display: none;
+}
+.chack-button{
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.chack-button:hover +.chack::before{
+    border-color: #000;
+}
+.chack-button:checked +.chack::before{
+    border-color: #000;
+}
+.chack-button:checked +.chack::after{
+    -moz-animation: check 0.8s ease 0s running;
+        -webkit-animation: check 0.8s ease 0s running;
+        animation: check 0.8s ease 0s running;
+        display: block;
+        width: 7px;
+        height: 20px;
+        border-color: #000;
+}
+
+  .button{
+    background:#f5ba1a;
+    height: 35px;
+    line-height: 35px;
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+    
+  }
+  .button:hover{
+      background-color: #f8c22e;
+  }
+  .button:hover{
+      background-color: #f8c22e;
+  }
+
+
+      .input-name{
+          margin-bottom: -10px;
+      }
+      .name{
+          width: 100%;
+          padding:8px 0 8px 40px;
+          margin-bottom: 10px;
+      }
+      .input-name span{
+          padding: 0;
+          margin:0;
+      }
+  
