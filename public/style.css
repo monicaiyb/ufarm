@@ -1,10 +1,15 @@
+/* Styling for body */
 *{
-    margin: 0;
+    margin: auto 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-
+/* Styling for nav bar */
+.logo_img {
+    height: 80px;
+    margin-left: 20px;
+}
 body {
     height: 80vh;
     background-image: url('./images/flower.jpg');
@@ -15,32 +20,29 @@ body {
     padding: 0px;
     
 }
-.fl{
-    float: left;
-    text-align: center;
-}
-.fr{float: right;}
+
+
 .wrapper{
     width: 100%;
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
+    margin: 0 auto;
 }
-.header{
-    width: 100%;
-    height: 100vh;
-    
-}
+
 .sub-header{
     width: 100%;
     background-color: #f8f7f0;
     position: fixed;
     top: 0;
+    display: inline;
+    box-shadow: 0 0 25px 0 #612903f1;
+    margin: 0 auto;
 }
 .top-header{
     width: 100%;
     height: 100px;
-    margin: auto;
+    
     top: 0;
     left: 0;
     right: 0;
@@ -65,11 +67,7 @@ body {
     color: #612903f1;
     
 }
-/* .logo h3{
-    color: #5f381ff1;
-    font-size: 10px;
-    margin-left: 5%;
-} */
+
 
 .nav{
     width: 70%;
@@ -91,12 +89,16 @@ body {
     font-family: 'Helvetica', serif;
     font-weight: bold;
     color: #612903f1;
+    margin: 20px;
+    
+    text-decoration: none;
+
 }
 .nav ul li a:hover{
     color:  #08192c;
     
 }
-/* .home{color: #ff2855;} */
+
 .sin{
     background-color: #612903f1;
     padding: 20px 4%;
@@ -108,12 +110,16 @@ body {
     background-color: #08192c;
     border: 1px solid #04244983;
 }
+
+
+/* This is styling for the landing page  */
 .bttm{
     width: 80%;
     margin: auto;
 }
 .btn-head{
     width: 100%;
+    height: 100vh;
     margin-top: 100px;
     align-items: center;
 }

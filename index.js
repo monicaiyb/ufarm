@@ -2,42 +2,40 @@
 const express=require("express");
 const bodyParser= require('body-parser');
 const path=require('path');
-const mongoose=require("mongoose")
+const mongoose=require("mongoose");
+
+// requiring the database file
+require("./db/db.js");
+// const customersView=require("./routes/customerRoutes")
 
 
 // instatiateing express function in our file
 const app =express();
 
-// mongoose.connect("mongodb://localhost:27017/node-demo",{
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true
-//   },
-//   function(err) {
-//     if (err) throw err;
-//     console.log("Successfully connected");
-//   }
-// );
+
 
 
 app.set("view engine","pug");
 app.set("views", path.join(__dirname,"view"));
-
+ 
+//  All my middleware for needed are written here
 app.use(bodyParser.urlencoded({extended: true}))
 
-// 
-// app.use(express.static("public"));
+// Application configurations.
 app.use(express.static('public'));
-
-
 app.use('/public', express.static(__dirname + '/public'));
+// app.use(customersView);
 
 //Sending my homepage to the browser
 app.get("/",(req,res)=>{
-    res.sendFile(__dirname +"/index.html");
+    res.sendFile(__dirname +"/index_old.html");
     console.log("Hello welcome my Ufarm project");
 })
-app.get("/customers_login",(req,res)=>{
-  res.sendFile(__dirname+"/customers_login.html")
+// app.get("/customers_login",(req,res)=>{
+//   res.sendFile(__dirname+"/customers_login.html")
+// })
+app.get("/c_signup",(req,res)=>{
+    res.sendFile(__dirname+"customers_signup.html");
 })
 
 

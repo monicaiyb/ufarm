@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Ufarm</title>
 		<link rel="stylesheet" href="./public/style.css" />
+		<link rel="stylesheet" href="./public/navbar.css">
 		<link rel="stylesheet" href="./public/css_bootsrap/bootstrap.min.css" />
 		<!-- <link
 			rel="stylesheet"
@@ -14,30 +15,41 @@
 		/> -->
 	</head>
 	<body>
-
-		<div class="full_page">
+		<div class="container-fluid">
+		<div class="wrapper">
 			<!-- div for navigation bar -->
-			<nav class="navbar">
-				<div class="container-fluid">
-				  <div class="navbar-header">
-					<a class="navbar-brand" href="#">Ufam</a>
-				  </div>
-				  <ul class="nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">Page 1</a></li>
-					<li><a href="#">Page 2</a></li>
-				  </ul>
-				  <ul class="nav  navbar-right">
-					<li><a href="#"><span></span> Sign Up</a></li>
-					<li><a href="#"><span></span> Login</a></li>
-				  </ul>
+			<div class="header fl">
+				<div class="sub-header">
+					<!-- This is the start of the navigation bar -->
+					<div class="top-header">
+						<div class="logo fl">
+							<p>
+								<img class="logo_img" src="./public/images/cow_logo.png" alt="" />
+								<span>UFARM</span>
+							</p>
+						</div>
+						<div class="nav fr">
+							<ul>
+								<li>
+									<a href="#"><span class="home">HOME</span></a>
+								</li>
+								<li><a href="#">ABOUT</a></li>
+								<li><a href="#">PRODUCT</a></li>
+								<li><a href="#">FARMERS</a></li>
+								<li><a href="#">CONTACT</a></li>
+								<li>
+									<!-- <a href="#"><span class="sin"></span>SIGN UP</span></a> -->
+									<a href="#"><span class="sin">SIGN UP</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-------end top navigation bar-->
 				</div>
-			  </nav>
-			<div class="container-fluid">
-                
+			</div>
+			
               
-                <br>
-                <br>
+                
                 <div class="row"> 
                     <div class="col-md-4"> 
                                   
@@ -86,7 +98,8 @@
                 <br>
                 <br>
                 
-		</div>
+		
+	</div>
 			
 	</body>
 	<script src="./public/script.js"></script>
