@@ -1,49 +1,4 @@
-/* Styling for forms */
-
-
-/* header {
-    background-color:#f8f7f0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 80px;   
-    display: flex;
-    align-items: center;
-    box-shadow: 0 0 25px 0 #5f381ff1;
-} */
-
-/* header * {
-    display: inline;
-    
-}
-
-header li {
-    margin: 20px;
-    
-}
-header nav h1{
-    font-family: 'Helvetica', serif;
-   color: #5f381ff1; 
-   font-size: 60px;
-   font-weight: bolder;
-   background-color:#f8f7f0;
-    position: fixed;
-    
-    display: flex;
-    align-items: center;
-   
-}
-
-header li a {
-    font-family: 'Helvetica', serif;
-    font-weight: bold;
-    color: #5f381ff1; 
-    text-decoration: none;
-
-} */
-
-
+/* Styling for the landing page Signup and login forms*/
 button{
     font-weight: bold;
     font-family: 'Helvetica', serif;
@@ -53,10 +8,15 @@ button{
     color: #5f381ff1; 
     
 }
+div .col{
+    margin: 4%;
+    padding: 4%;
+}
 .main{ 
     padding:0px; 
-    margin: 0%;
+    margin-top: 4%;
     font-family: 'Helvetica', serif; 
+    
     box-shadow: 5px 5px 7px 5px  #5f381ff1; 
       
 } 
@@ -64,14 +24,14 @@ button{
     font-size: 40px; 
     text-align:center; 
     font-family: 'Helvetica', serif; 
-      
+    padding: 10px;  
 } 
 input{ 
     font-family: 'Helvetica', serif; 
     width: 100%; 
     font-size: 20px; 
-    padding: 12px 20px; 
-    margin: 8px 0; 
+    padding: 8px 10px; 
+    margin: 8px 8px,8px,8px; 
     border: none; 
     border-bottom: 2px solid #5f381ff1; 
 } 
@@ -81,16 +41,11 @@ input[type=submit] {
     background-color: #5f381ff1; 
     border: none; 
     color: white; 
-    padding: 16px 32px; 
+    padding: 10px 10px; 
     margin: 4px 2px; 
     border-radius: 10px; 
 } 
-.container-fluid{
-    margin: 100px;
-    padding: 0%;
-    color: white;
-    
-}
+
 #story_div{
     background-color: rgba(131, 93, 86, 0.87);
     padding: 0%;

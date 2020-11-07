@@ -2,26 +2,37 @@
 
 const express= require("express");
 
-const customer=require("../models/customers_schema.js");
+const customer=require("../models/customers_schema.js");    
 
 // Instatiating the Router method of express to use it for my routes
 const router=express.Router();
 
 // These are routes to display the various customer pages
-router.get("/c_signup",(req,res)=>{
-    res.sendFile(__dirname+"customers_signup.html");
+// Homepage
+router.get("/",(req,res)=>{
+    res.render("trylayout");
+    console.log("Hello welcome my Ufarm project");
 })
-
+// login
+router.get("/c_signup",(req,res)=>{
+    res.render("signup");
+})
+router.post("/c_signup",(req,res)=>{
+    // res.render("signup");
+    console.log(req.body);
+})
+// signup
 router.get("/c_login",(req,res)=>{
-    res.sendFile(__dirname+"customers_signup.html");
+    res.render("login");
+})
+router.post("/c_login",(req,res)=>{
+    // res.render("login");
+    console.log(req.body);
 })
 // These are routes to display s
-router.post("/customers",(req,res)=>{
-    console.log("sending to db");
-})
 
  
 
-module.exports= router;
+module.exports=router;
 
 

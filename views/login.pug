@@ -1,0 +1,21 @@
+extends layout
+block content
+    .row
+      .col-md-4
+      .col-md-4.main
+        form(name="login" action="./C_login" method="POST" onsubmit="loginValidation()")
+          p Ufarm Login here.
+          input#user_name.box(type="text" name="name" placeholder="Name")
+          span#error_user
+          br
+          br
+          input#password.box(type="password" name="password" placeholder="Password ")
+          span#error_password
+          br
+          br
+          input#submitDetails(type="submit" name="submitDetails" value="Submit")
+          br
+        p
+          | Don't have an account 
+          a(href="#") signup
+      .col-md-4

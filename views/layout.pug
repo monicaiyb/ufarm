@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Ufarm
+    script(src="./script.js")
+    link(rel="stylesheet" href="./style.css")
+    link(rel="stylesheet" href="./navbar.css")
+    link(rel="stylesheet" href="./css_bootsrap/bootstrap.min.css")
+  body
+    .container-fluid
+      .wrapper
+        .navbar.header.fl
+          .sub-header
+            .top-header
+              .logo.fl
+                p
+                  img.logo_img(src="./public/images/cow_logo.png" alt="")
+                  span UFARM
+              .nav.fr
+                ul
+                  li
+                    a(href="#")
+                      span.home HOME
+                  li
+                    a(href="#") ABOUT
+                  li
+                    a(href="#") PRODUCT
+                  li
+                    a(href="#") FARMERS
+                  li
+                    a(href="#") CONTACT
+                  li
+                    a(href="./c_signup")
+                      span.sin SIGN UP
+        block content

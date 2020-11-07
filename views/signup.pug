@@ -1,0 +1,26 @@
+extends layout
+block content
+    .row
+      .col-md-4
+      .col-md-4.main
+        form(name="signUpForm" action="./c_signup" method="POST" onsubmit="signUpValidation()")
+          h1  Signup form 
+          input#fname.box(type="text" name="fname" placeholder="First Name")
+          span#fname_err
+          br
+          input#lname.box(type="text" name="lname" placeholder="Last Name")
+          span#lname_err
+          br
+          input#email.box(type="email" name="email" placeholder="E-Mail ")
+          span#signup_email_err
+          br
+          input#phone.box(type="text" name="phone" placeholder="Phone Number ")
+          span#signup_phone_err
+          br
+          input#password.box(type="password" name="password" placeholder="Password ")
+          span#signup_password_err
+          br
+          br
+          input#submitDetails(type="submit" name="submitDetails" value="Submit" )
+          br
+      .col-md-4
