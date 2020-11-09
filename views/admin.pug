@@ -1,0 +1,26 @@
+extends layout
+block content
+    .admin-panel.clearfix
+      .slidebar
+        ul
+          li
+            a#targeted(href="#dashboard")
+            | Administrator
+          li
+            a(href="#posts") Add Farmer one
+          li
+            a(href="#") Update Farmers
+          li
+            a(href="#Inspect") Manage Farmers
+          li
+            a(href="#Approve") Manage Products
+          li
+            a(href="#Repor") Report
+          li
+            a(href="#Logout") Logout
+      .dash_display
+        table
+          tr
+            th First name
+            th Last Name
+        

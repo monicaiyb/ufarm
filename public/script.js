@@ -63,7 +63,7 @@ const signUpValidation=()=>{
     } else {
         fname.style.border="1px solid red";
         // fNameErr.textContent="Please enter a valid name";
-        fNameErr.innerHTML="Please enter a valid name";
+        fNameErr.innerHTML="Please enter a valid first name";
         fNameErr.style.border="1px solid red";
     }
     //This condition checks validation for lname
@@ -71,7 +71,7 @@ const signUpValidation=()=>{
         lname.style.border="1px solid green";
     } else {
         lname.style.border="1px solid red";
-        lNameErr.innerHTML="Please enter a valid name";
+        lNameErr.innerHTML="Please enter a last name";
         lNameErr.style.border="1px solid red";
         
     }
@@ -83,7 +83,7 @@ const signUpValidation=()=>{
         // alert("wrong email input");
         // email.style.border="3px solid red";
         email.style.border="1px solid red";
-        sEmailErr.innerHTML="Please enter a valid name";
+        sEmailErr.innerHTML="Please enter a email";
         sEmailErr.style.border="1px solid red";
     }
 
@@ -91,9 +91,8 @@ const signUpValidation=()=>{
     if (checkPassword.test(password.value)==true) {
         password.style.border="1px solid blue";
     } else {
-        // alert("wrong email input");
         password.style.border="1px solid red";
-        sPasswordErr.innerHTML="Please enter a valid name";
+        sPasswordErr.innerHTML="Please enter a valid password";
         sPasswordErr.style.border="1px solid red";
     }
 
@@ -101,9 +100,13 @@ const signUpValidation=()=>{
     if (checkPhone.test(phone.value)==true) {
         password.style.border="1px solid blue";
     } else {
-        // alert("wrong email input");
+        
         phone.style.border="1px solid red";
-        sPhoneErr.innerHTML="Please enter a valid name";
+        sPhoneErr.innerHTML="Please enter a phone number";
         sPhoneErr.style.border="1px solid red";
     }
 }
+
+
+// This is validation for registration form.
+

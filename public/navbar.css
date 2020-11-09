@@ -9,9 +9,10 @@ button{
     
 }
 div .col{
-    margin: 4%;
+    margin: 8%;
     padding: 4%;
 }
+
 .main{ 
     padding:0px; 
     margin-top: 4%;
@@ -20,6 +21,7 @@ div .col{
     box-shadow: 5px 5px 7px 5px  #5f381ff1; 
       
 } 
+
 .main h1,h3{ 
     font-size: 40px; 
     text-align:center; 
@@ -52,14 +54,29 @@ input[type=submit] {
     margin: 0 auto ;
 }
 
-
 /* Styling for farmers registration form */
-.lock{
-    padding:8px 11px;
+.form_main{
+    padding:0px; 
+    margin-top: 4%;
+    font-family: 'Helvetica', serif; 
+    
+    box-shadow: 5px 5px 7px 5px  #5f381ff1; 
 }
+.form_main input{ 
+    font-family: 'Helvetica', serif; 
+    width: 100%; 
+    font-size: 20px; 
+    
+    border: none; 
+    border-bottom: 2px solid #5f381ff1; 
+}
+
+
+/* Styling for customers registration form */
+
 .name{
     width: 45%;
-    padding:8px 0 8px 40px;
+    
 }
 
 .text-name{
@@ -139,30 +156,7 @@ input[type=submit] {
     -moz-appearance: none;
     transition: all 0.2s ease;
 }
-.country::-ms-expand{
-    display: none;
-}
-.country:hover, .country:focus{
-    color: #000;
-      background: #fafafa;
-      border-color: #000;
-      outline: none;
-}
-.arrow {
-    position: absolute;
-    top: calc(50% - 4px);
-    right: 15px;
-    width: 0;
-    height: 0;
-    pointer-events: none;
-    border-width: 8px 5px 0 5px;
-    border-style: solid;
-    border-color: #7b7b7b transparent transparent transparent;
- }
-  
-.country:hover +.arrow, .country:focus +.arrow{
-      border-top-color: #000;
-}
+
 .chack{
     margin-right: 1em;
         position: relative;
@@ -193,7 +187,7 @@ input[type=submit] {
           width: 7px;
           display: none;
 }
-.chack-button{
+.chack_button{
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
