@@ -1,10 +1,10 @@
 /* Styling for body */
-*{
+/* *{
     margin: auto 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-}
+} */
 /* Styling for nav bar */
 .logo_img {
     height: 80px;
@@ -13,7 +13,7 @@
 body {
     height: 80vh;
     background-image: url('./images/flower.jpg');
-    background-size: cover;
+    background-size: contain;
     background-attachment: fixed;   
     font-family: sans-serif;
     margin-top: 80px;
@@ -176,7 +176,6 @@ body {
     width: 15%;
     height: 100vh;
     background: #f8f7f0;
-    
   }
   
   .nav_side {
@@ -190,6 +189,7 @@ body {
   }
   .nav_side ul li a{
     color: #612903f1;
+    margin-top: 50px;
   }
   .nav_side ul li a:hover{
     color:  #08192c;
@@ -237,7 +237,7 @@ body {
         border-right: 1px solid rgb(235,235,235);
         background-color: #f8f7f0;
         color: #612903f1;
-    
+        position: relative;
     }
    
     .slidebar ul {
@@ -275,6 +275,7 @@ body {
         box-shadow:inset 0 1px 0 rgb(255,255,255);
         text-indent: 20px;
         text-transform: capitalize;
+        
     }
     .slidebar li:hover a {
         background-color: rgb(255,255,255);
@@ -336,25 +337,5 @@ body {
         display: inline-block;
     }
    
-    .monitor p a {
-        text-decoration: none;
-        color:rgb(27,106,173);
-    }
-    .quick-press form {
-        margin:0 20px 0 13px;
-    }
-    .quick-press input[type="text"] {
-        display: block;
-        width: 100%;
-        -moz-box-sizing:border-box;
-        box-sizing:border-box;
-        height: 35px;
-        line-height: 15px;
-        padding: 10px 0;
-        margin:0 0 7px 0;
-        background-color: rgb(246,246,246);
-        outline: none;
-        border: none;
-        text-indent: 10px;
-    }
+   
     

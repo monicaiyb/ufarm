@@ -4,77 +4,74 @@ block content
           .col-2
           .col-8
             h2
-            form.form_main(method="post" action="/admin/register")
-              fieldset
-                legend
-                  | Personal Information
-                  .row
+            form.form_main(method="post" action="/farmerOne/registerFarmer")
+                  h4 Create account
+                  
+                  .form-row
                     .col
                       label First Name:
                       input#reg_fname.name(type="text" placeholder="First Name" name="reg_fname")
                     .col
                       label Last Name:
                       input#reg_lname.name(type="text" placeholder="Last Name" name="reg_lname")
+                      .col
+                      label username:
+                      input#username.name(type="text" placeholder="Username" name="username")                    
+                  .form-row
                     .col
                       label Date of birth:
                       input#reg_dob.name(type="date" placeholder="" name="reg_dob")
-                  .row
                     .col
                       label Phone Number:
                       input#reg_phone(type="tel" placeholder="Phone Number" name="reg_phone")
                     .col
                       label ID Number:
-                      input#reg_id(type="text" placeholder="ID Number" name="reg_id")
+                      input#reg_id(type="text" placeholder="ID Number" name="reg_id")             
+                  .form-row
                     .col
                       label Date of Registration:
                       input.reg_date(type="date" placeholder="Date of Registration" name="reg_date")
-              fieldset
-                legend
-                  .row
-                    .col
+                    .col.form-group
                       | Gender:
-                      input#gender1.radio-button(type="radio" name="radiogroup1")
+                      input#gender1.radio-button(type="radio" name="gender" value="male" )
                       label.gender(for="gender1") Male
-                      input#gender2.radio-button(type="radio" name="radiogroup1")
+                      input#gender2.radio-button(type="radio" name="gender" value="female")
                       label.gender(for="gender2") Female
-                    .col
+                    .col.form-group
                       label Farmer Ward
                       select.ward(name="ward")
-                        option Ward 1
-                        option Ward 2
-                        option Ward 3
-                        option Ward 4
-                  .row
-                    .col
+                        option(value="masaja") masaja
+                        option(value="makindye") makindye
+                        option(value="busabala") busabala
+                        option(value="bunamwaya") bunamwaya
+                  .form-row
+                    .col.form-group
                       label Products:
-                      input#cb1.chack_button(type="checkbox" name="checkb" )
+                      input#cb1.chack_button(type="checkbox" name="product" value="Horticulture" )
                       label.chack(for="cb1") Horticulture
-                      input#cb2.chack_button(type="checkbox" name="checkb")
+                      input#cb2.chack_button(type="checkbox" name="product" value="Dairy" )
                       label.chack(for="cb2") Poultry
-                      input#cb3.chack_button(type="checkbox" name="checkb")
+                      input#cb3.chack_button(type="checkbox" name="product" value="Poultry" )
                       label.chack(for="cb3") Dairy
-                      input#cb4.chack_button(type="checkbox" name="checkb")
-                      label.chack(for="cb4") Other
-              fieldset
-                legend
-                  row
-                    .col
+                      input#cb4.chack_button(type="checkbox" name="product" value="Others" )
+                      label.chack(for="cb4") Others
+                  .form-row
+                    .col.form-group
                       | Location Information
                       label(for="address") Address:
                       input#address.address(type="text" name="address")
                     .col
                       label No years in area:
                       select#no_of_year.no_of_yr(name="no_of_year")
-                        option Less than 1
-                        option Between 1-3
-                        option Between 4-7 
-                        option Between 8-10
-                        option More than 10
-              .row
-                .col
-                  label(for="reg_password") Create password
-                  input#reg_password.name(type="text" placeholder="Password" name="password") 
-              .row
-                .col
-                  input.button(type="submit" value="Register")
-          .col-2
+                        option(value="Less than 1") Less than 1
+                        option(value="Between 1-3") Between 1-3
+                        option(value="Between 4-7 ") Between 4-7 
+                        option(value="Between 8-10") Between 8-10
+                        option(value="Less than 1") More than 10
+                  .form-row
+                    .col.form-group
+                      label(for="reg_password") Create password
+                      input#reg_password.name(type="password" placeholder="Password" name="password") 
+                  .form-row
+                    .col.form-group
+                      input.button(type="submit" value="Register")

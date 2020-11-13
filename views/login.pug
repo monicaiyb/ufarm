@@ -5,7 +5,7 @@ block content
       .col-md-4.main
         form(name="login" action="./C_login" method="POST" onsubmit="loginValidation()")
           p Ufarm Login here.
-          input#user_name.box(type="text" name="name" placeholder="Name")
+          input#user_name.box(type="text" name="username" placeholder="Username")
           span#error_user
           br
           br
@@ -17,5 +17,5 @@ block content
           br
         p
           | Don't have an account 
-          a(href="#") signup
+          a(href="/c_signup") signup
       .col-md-4

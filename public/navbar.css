@@ -2,15 +2,15 @@
 button{
     font-weight: bold;
     font-family: 'Helvetica', serif;
-    margin: 20px;
+    margin: 4px;
     float: right;
     border: none;
     color: #5f381ff1; 
     
 }
 div .col{
-    margin: 8%;
-    padding: 4%;
+    margin: 0%;
+    padding: 0%;
 }
 
 .main{ 
@@ -28,9 +28,15 @@ div .col{
     font-family: 'Helvetica', serif; 
     padding: 10px;  
 } 
-input{ 
+label{
+    font-family: 'Helvetica', serif;
+    font-size: 20px;
+    font-weight: bold;
+    color:#5f381ff1;
+}
+input,select{ 
     font-family: 'Helvetica', serif; 
-    width: 100%; 
+    width: 50%; 
     font-size: 20px; 
     padding: 8px 10px; 
     margin: 8px 8px,8px,8px; 
@@ -62,11 +68,10 @@ input[type=submit] {
     
     box-shadow: 5px 5px 7px 5px  #5f381ff1; 
 }
-.form_main input{ 
+.form_main input,.no_of_year{ 
     font-family: 'Helvetica', serif; 
-    width: 100%; 
+    width: 50%; 
     font-size: 20px; 
-    
     border: none; 
     border-bottom: 2px solid #5f381ff1; 
 }
@@ -84,7 +89,7 @@ input[type=submit] {
     padding:8px 0 8px 40px;
 }
 
-.email{
+.username{
     padding: 8px;
 }
 .text-name, .name{
@@ -143,7 +148,7 @@ input[type=submit] {
 
   .ward{
     display: inline-block;
-    width: 100%;
+    width: 50%;
     height: 35px;
     padding: 0px 15px;
     cursor: pointer;
@@ -212,17 +217,7 @@ input[type=submit] {
         height: 20px;
         border-color: #000;
 }
-/* @-webkit-keyframes check {
-    0% { height: 0; width: 0; }
-    25% { height: 0; width: 7px; }
-    50% { height: 20px; width: 7px; }
-  }
-  
-  @keyframes check {
-    0% { height: 0; width: 0; }
-    25% { height: 0; width: 7px; }
-    50% { height: 20px; width: 7px; }
-  } */
+
   .button{
     background:#f5ba1a;
     height: 35px;

@@ -1,6 +1,6 @@
 const express=require("express");
 const mongoose=require("mongoose");
-
+const passportLocalMongoose = require('passport-local-mongoose');
 // Defining the registration schema for customers
 const regFarmerSchema=new mongoose.Schema({
 reg_fname:{
@@ -9,6 +9,10 @@ reg_fname:{
 },
 reg_lname:{
     type:String
+},
+username:{
+    type:String,
+    unique:true
 },
 reg_dob:{
     type:Date,
@@ -26,17 +30,18 @@ reg_date:{
     type:Date,
     trim:true,
 },
-radiogroup1:{type:String},
+gender:{type:String},
 ward:{type:String},
-checkb:{type:String},
+product:[{
+    type: String
+}],
 address:{type:String},
 no_of_yr:{type:String},
-password: {
-    type: String,
-    required: 'Please Enter password'
+password:{
+    type:String,
+    unique:true
 },
-
 });
 
-
+regFarmerSchema.plugin(passportLocalMongoose);
 module.exports=mongoose.model("registerFarmer",regFarmerSchema);

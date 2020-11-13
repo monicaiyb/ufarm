@@ -38,7 +38,7 @@ const loginValidation =()=>{
 const signUpValidation=()=>{
     const fname=document.signUpForm.fname;
     const lname=document.signUpForm.lname;
-    const email=document.signUpForm.email;
+    const username=document.signUpForm.username;
     const password=document.signUpForm.password;
     const phone=document.signUpForm.phone;
 
@@ -53,7 +53,7 @@ const signUpValidation=()=>{
 
 
     let checkNameUser=/^[0-9a-zA-Z]+$/;
-    let checkEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    let checkusername=/^[0-9a-zA-Z]+$/;;
     let checkPassword=/^\w{7,12}/
     let checkPhone=/^[0-9]{3}/
 
@@ -77,12 +77,11 @@ const signUpValidation=()=>{
     }
 
     //This condition checks validation for email
-    if (checkEmail.test(email.value)) {
-        email.style.border="1px solid green";
+    if (checkusername.test(username.value)) {
+        username.style.border="1px solid green";
     } else {
-        // alert("wrong email input");
-        // email.style.border="3px solid red";
-        email.style.border="1px solid red";
+       
+        username.style.border="1px solid red";
         sEmailErr.innerHTML="Please enter a email";
         sEmailErr.style.border="1px solid red";
     }

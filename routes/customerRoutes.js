@@ -2,7 +2,7 @@
 //importing express and other methods by requiring them
 const express= require("express");
 const mongoose=require("mongoose");
-
+const passport = require('passport');
 
 //const { check, validationResult } = require('express-validator');
 
@@ -10,7 +10,7 @@ const customer=require("../models/registration");
 
 // Instatiating the Router method of express to use it for my routes
 const router=express.Router();
-const register=mongoose.model("registration")
+const Register=mongoose.model("Registration")
 
 // These are routes to display the various customer pages
 // Homepage
@@ -23,37 +23,35 @@ router.get("/c_signup",(req,res)=>{
     res.render("signup");
 })
 
-router.post("/c_signup",(req,res)=>{
+
+router.post("/c_signup",async(req,res)=>{
 
     console.log(req.body);
-    
-    const registration = new register(req.body);
-    registration.save()
-     .then(() => { res.send('Thank you for your registration!'); })
-     .catch((err) => {
-         console.log(err);
-         res.send('Sorry! Something went wrong.');
-     });
-  
-    res.render("signup"); 
-})
-// signup
-router.get("/c_login",(req,res)=>{
-    register.find()
-    .then((registrations) => {
-      res.render('index', { title: 'Customer Registration', registrations });
-    })
-    .catch(() => { res.send('Sorry! Something went wrong.'); });
-    res.render("login");
-})
-router.post("/c_login",(req,res)=>{
-    // res.render("login");
-    console.log(req.body);
-})
-// These are routes to display s
+    try {
+        const cDetails = new Register(req.body);
+        await Register.register(cDetails, req.body.password , (err) => {
+            if (err)
+              { 
+               throw err
+              }
+            res.redirect('/c_login')
+        })
+    }
+    catch (err) {
+        res.status(400).send('Sorry! Something went wrong.')
+        console.log(err)
+    }
 
- 
+// Route to display login
+router.get('/c_login', (req, res) => {
+    res.render('login');
+});
 
+//process the username and password that are submitted in the login page
+router.post('/c_login', passport.authenticate('local'), (req,res) =>{
+    req.session.user = req.user;
+    res.redirect('/products');
+})
+
+})
 module.exports=router;
-
-

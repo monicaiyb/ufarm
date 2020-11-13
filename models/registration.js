@@ -1,5 +1,6 @@
 const express=require("express");
 const mongoose=require("mongoose");
+const passportLocalMongoose = require('passport-local-mongoose');
 
 // Defining the registration schema for customers
 const registerSchema=new mongoose.Schema({
@@ -10,22 +11,24 @@ fname:{
 lname:{
     type:String
 },
-email:{
+username:{
     type:String,
     trim:true,
+    unique:true,
+    required:true
 },
 phone:{
     type:String,
     trim:true,
-},
-password:{
-    type:String,
-    trim:true,
-},
+}
+// password:{
+//     type:String,
+//     trim:true,
+// },
 
 });
 
 
 
-
-module.exports=mongoose.model("registration",registerSchema);
+registerSchema.plugin(passportLocalMongoose);
+module.exports=mongoose.model("Registration",registerSchema);
