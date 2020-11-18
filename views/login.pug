@@ -3,8 +3,8 @@ block content
     .row
       .col-md-4
       .col-md-4.main
-        form(name="login" action="./C_login" method="POST" onsubmit="loginValidation()")
-          p Ufarm Login here.
+        form(name="login" action="/login" method="POST" onsubmit="return loginValidation()")
+          h2 Ufarm Login here.
           input#user_name.box(type="text" name="username" placeholder="Username")
           span#error_user
           br
@@ -15,7 +15,6 @@ block content
           br
           input#submitDetails(type="submit" name="submitDetails" value="Submit")
           br
-        p
           | Don't have an account 
-          a(href="/c_signup") signup
+          a(href="/signup") Contact Admin
       .col-md-4

@@ -11,35 +11,38 @@ button{
 div .col{
     margin: 0%;
     padding: 0%;
+
 }
 
 .main{ 
     padding:0px; 
-    margin-top: 4%;
+    margin-top: 0%;
     font-family: 'Helvetica', serif; 
-    
-    box-shadow: 5px 5px 7px 5px  #5f381ff1; 
+    font-size: 15px;
+    background-color: #fafafa;
+    color: #5f381ff1;
+    box-shadow: 5px 5px 7px 5px  #3d3834f1; 
       
 } 
 
-.main h1,h3{ 
-    font-size: 40px; 
+.main h1,h2,p{ 
+    color: #5f381ff1;
     text-align:center; 
     font-family: 'Helvetica', serif; 
-    padding: 10px;  
+    padding: 2px;  
 } 
 label{
     font-family: 'Helvetica', serif;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     color:#5f381ff1;
 }
 input,select{ 
     font-family: 'Helvetica', serif; 
-    width: 50%; 
-    font-size: 20px; 
-    padding: 8px 10px; 
-    margin: 8px 8px,8px,8px; 
+    width: 100%; 
+    font-size: 15px; 
+    padding: 2px; 
+    margin: 2px; 
     border: none; 
     border-bottom: 2px solid #5f381ff1; 
 } 
@@ -49,9 +52,9 @@ input[type=submit] {
     background-color: #5f381ff1; 
     border: none; 
     color: white; 
-    padding: 10px 10px; 
-    margin: 4px 2px; 
-    border-radius: 10px; 
+    padding: 0px; 
+    margin: 1px 1px; 
+    border-radius: 2%; 
 } 
 
 #story_div{
@@ -63,15 +66,14 @@ input[type=submit] {
 /* Styling for farmers registration form */
 .form_main{
     padding:0px; 
-    margin-top: 4%;
+    margin-top: 0%;
     font-family: 'Helvetica', serif; 
-    
     box-shadow: 5px 5px 7px 5px  #5f381ff1; 
 }
-.form_main input,.no_of_year{ 
+.form_main input{ 
     font-family: 'Helvetica', serif; 
-    width: 50%; 
-    font-size: 20px; 
+    width: 100%; 
+    font-size: 15px; 
     border: none; 
     border-bottom: 2px solid #5f381ff1; 
 }
@@ -79,10 +81,6 @@ input[type=submit] {
 
 /* Styling for customers registration form */
 
-.name{
-    width: 45%;
-    
-}
 
 .text-name{
     width: 100%;
@@ -100,16 +98,8 @@ input[type=submit] {
       -ms-transition: all 0.30s ease-in-out;
       transition: all 0.30s ease-in-out;
 }
-.text-name:hover, .name:hover{
-    background-color: #fafafa;
-}
-.text-name:focus, .name:focus{
-    -webkit-box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
-      -moz-box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
-      box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
-      border: 1px solid #f5ba1a;
-      background: #fafafa;
-}
+
+
 .radio-button{
     border: 0;
     clip: rect(0 0 0 0);
@@ -123,28 +113,9 @@ input[type=submit] {
  .gender {
     margin-right: 1em;
 }
-.gender:before {
-    content: "";
-    display: inline-block;
-    width: 0.5em;
-    height: 0.5em;
-    margin-right: 0.5em;
-    border-radius: 100%;
-    vertical-align: -3px;
-    border: 2px solid #cccccc;
-    padding: 0.15em;
-    background-color: transparent;
-    background-clip: content-box;
-    transition: all 0.2s ease;
-  }
 
-  .radio-button:hover + .gender:before {
-    border-color: #000;
-  }
-  .radio-button:checked + .gender:before {
-    background-color:#000;
-    border-color: #000;
-  }
+
+  
 
   .ward{
     display: inline-block;
@@ -162,61 +133,7 @@ input[type=submit] {
     transition: all 0.2s ease;
 }
 
-.chack{
-    margin-right: 1em;
-        position: relative;
-}
-.chack::before{
-    content: "";
-    display: inline-block;
-    width: 0.5em;
-    height: 0.5em;
-    margin-right: 0.5em;
-    vertical-align: -2px;
-    border: 2px solid #cccccc;
-    padding: 0.12em;
-    background-color: transparent;
-    background-clip: content-box;
-    transition: all 0.2s ease;
-}
-.chack::after{
-    border-right: 2px solid #000;
-          border-top: 2px solid #0000;
-          content: "";
-          height: 20px;
-          left: 2px;
-          position: absolute;
-          top: 7px;
-          transform: scaleX(-1) rotate(135deg);
-          transform-origin: left top;
-          width: 7px;
-          display: none;
-}
-.chack_button{
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-.chack-button:hover +.chack::before{
-    border-color: #000;
-}
-.chack-button:checked +.chack::before{
-    border-color: #000;
-}
-.chack-button:checked +.chack::after{
-    -moz-animation: check 0.8s ease 0s running;
-        -webkit-animation: check 0.8s ease 0s running;
-        animation: check 0.8s ease 0s running;
-        display: block;
-        width: 7px;
-        height: 20px;
-        border-color: #000;
-}
+
 
   .button{
     background:#f5ba1a;

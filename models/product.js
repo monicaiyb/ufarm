@@ -1,34 +1,37 @@
 const express=require("express");
 const mongoose=require("mongoose");
+//const passportLocalMongoose = require('passport-local-mongoose');
 
 // Defining the registration schema for customers
 const productSchema=new mongoose.Schema({
-    pname:{
+    pName:{
         type:String
     },
-    pcategory:{
-        type:String
+    pCategory:{
+        type: String
     },
     ward:{
-        type:String
+        type: String
     },
     pdate:{
         type:Date
     },
-    ModeOfPayment:{
-        type:Number
-    },
+   
     pUnitPrice:{
         type:Number
     },
-    deliveryMode:{
-        type:String
-    }
-
-
+    
+    pQuantity:{
+        type:Number,
+    },
+    paymentMode:[{
+        type: String,
+    }],
+    deliveryMode:[{
+        type: String,
+    }],
 });
 
 
 
-
-module.exports=mongoose.model("products",registerSchema);
+module.exports=mongoose.model("products",productSchema);

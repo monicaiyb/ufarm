@@ -34,7 +34,10 @@ const foSchema=new mongoose.Schema({
     ward:{type:String},
     product:[{type:String}],
     address:{type:String},
-    no_of_yr:{type:String},
+    residence:{type:String},
+    role: { 
+        type: String, 
+        required: 'Please Enter a role' },
     password:{type:String}
     });
     

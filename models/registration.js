@@ -14,18 +14,20 @@ lname:{
 username:{
     type:String,
     trim:true,
-    unique:true,
     required:true
+},
+roles:{
+    type:String
+    
 },
 phone:{
     type:String,
     trim:true,
+},
+password:{
+    type:String,
+    trim:true,
 }
-// password:{
-//     type:String,
-//     trim:true,
-// },
-
 });
 
 

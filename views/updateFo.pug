@@ -34,19 +34,19 @@ block content
                         button.btn.btn-dark.btn-block(type="submit") Log out
     form(method="post" action="/update?id="+user._id)
         table.table
-            thead.thead-dark
+            thead.thead
                 tr
                     th Firstname
                     td 
-                        input.form-control(value = user.firstname name ="firstname")
+                        input.form-control(value = fo.reg_fname name ="reg_fname")
                 tr
                     th Lastname
                     td 
-                        input.form-control(value = user.lastname name ="lastname")
+                        input.form-control(value = fo.reg_lname name ="reg_name")
                 tr
                     th Username
                     td 
-                        input.form-control(value = user.username name ="username")
+                        input.form-control(value = fo.username name ="username")
                 tr
                     th Gender
                     td 

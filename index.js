@@ -1,15 +1,9 @@
-//I am importing moduless into my project
 const express=require("express");
 const bodyParser= require('body-parser');
 const path=require('path');
 require('dotenv').config();
 const passport = require('passport');
 
-const expressSession = require('express-session')({
-  secret: 'secret',
-  resave: false,
-  saveUninitialized: false
-});
 
 const mongoose=require("mongoose");
 mongoose.connect(process.env.DATABASE,{
@@ -25,68 +19,51 @@ mongoose.connect(process.env.DATABASE,{
   .on('error', (err) => {
     console.log(`Connection error: ${err.message}`);
   });
-
-// importing routes
-const customerRoutes=require("./routes/customerRoutes");
-const aoRoutes=require("./routes/aoRoutes");
-const farmerOneRoutes=require("./routes/farmerOneRoutes");
-const farmerRoutes=require("./routes/farmerRoutes");
-
-// importing models
-const registerModel=require("./models/registration");
-// const regFarmerModel=require("./models/farmer");
-// const foregModel=require("./models/fo");
+// Importing routes
+const loginRoutes =require("./routes/loginRoutes");
+const foRoutes=require("./routes/foRoutes");
+const farmerRoutes=require("./routes/farmerRoutes")
+// Import models
+const foregModel=require("./models/fo");
 
 // instatiateing express function in our file
 const app =express();
+const expressSession = require('express-session')({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: false
+});
 
+// Set middleware for pug
 app.set('views', path.join(__dirname, 'views'));
 app.set("view engine","pug");
-// app.set("views", "./views");
- 
-//  All my middleware for needed are written here
-app.use(bodyParser.urlencoded({extended: true}))
-// app.use(express.static('public'));
+//  All middleware 
+app.use(bodyParser.urlencoded({extended: true}));
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressSession);
 
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use(registerModel.createStrategy());
-passport.serializeUser(registerModel.serializeUser());
-passport.deserializeUser(registerModel.deserializeUser());
-
+// passport model
+passport.use(foregModel.createStrategy());
+passport.serializeUser(foregModel.serializeUser());
+passport.deserializeUser(foregModel.deserializeUser());
 // importing routes to server
-app.use("/",customerRoutes);
-app.use("/ao",aoRoutes);
-app.use("/farmerOne",farmerOneRoutes);
+app.use("/login",loginRoutes);
+app.use("/fo",foRoutes);
 app.use("/farmer",farmerRoutes);
 
-// instatiting models
-// app.use("/c_signup",registerModel);
-// app.use("/farmerOne/",regFarmerModel);
 
-
-
-
-
-
-
-//Sending my homepage to the browser
-app.post('/logout', (req, res) => {
-  if (req.session) {
-      req.session.destroy((err)=> {
-          if (err) {
-              // failed to destroy session
-          } else {
-              return res.redirect('/login');
-          }
-      });
-  }  
+app.get("/",(req,res)=>{
+    res.render("index");
+    console.log("Hello welcome my Ufarm project");
 })
 
- 
-
+app.get('*',(req,res)=>{
+    res.send('error page')
+})
+  
 // created a server have it listen at port 3000
 app.listen(3000,()=>console.log("Listening at port 3000"));

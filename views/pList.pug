@@ -1,0 +1,48 @@
+extends layout
+block content
+    .admin-panel.clearfix
+      .slidebar
+         ul
+          li
+            a#targeted(href="#dashboard")
+            | Administrator
+          li
+            a(href="/farmer/pAdd") Add Products
+          li
+            a(href="/farmer/pList") View Products
+          li
+            a(href="/farmer/Order") Orders                 
+          li
+            a(href="#Report") Report
+          li
+            a(href="#Logout") Logout
+      .dash_display
+         header.card-header
+            h4.card-title Welcome 
+            table.table
+              if products.length
+                thead
+                    tr
+                        th Product 
+                        th Category
+                        th Unit Price
+                        th ward
+                        th Quantity
+                        th Date
+                        th 
+                        th
+                tbody
+                  each product in products
+                    tr
+                        td #{products.pName}
+                        td=products.pCategory
+                        td=products.pUnitPrice
+                        td=products.ward
+                        td=products.pQuantity
+                        td=products.pDate
+                        td  
+                            a(href='/update/'+products._id) Update
+                        td
+                            form(method="post" action='/farmer/delete')
+                                input(type="hidden", placeholder="", name="delete_id", value=products._id)
+                                button.btn.btn-dark.btn-block(type="submit") Delete

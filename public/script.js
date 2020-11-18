@@ -32,6 +32,15 @@ const loginValidation =()=>{
         errorPassword.style.color="red";
         return false;
     }
+    if(userName.value==""&&password.value==""){
+        alert("Empty fields")
+        password.style.border="1px solid red";
+        errorPassword.innerHTML = "Enter empty fields!";
+        userName.style.border="1px solid red";
+        userName.innerHTML = "Sorry your id is wrong!";
+        userName.focus();
+        return false
+    }
 }
 
 // This function works on validation of signup for
@@ -47,15 +56,12 @@ const signUpValidation=()=>{
     const lNameErr=document.getElementById("lname_err");
     const sEmailErr=document.getElementById("signup_email_err");
     const sPhoneErr=document.getElementById("signup_phone_err");
-    const sPasswordErr=document.getElementById("signup_password_err");
-    
-
-
+    const sPasswordErr=document.getElementById("signup_password_err")
 
     let checkNameUser=/^[0-9a-zA-Z]+$/;
     let checkusername=/^[0-9a-zA-Z]+$/;;
     let checkPassword=/^\w{7,12}/
-    let checkPhone=/^[0-9]{3}/
+    let checkPhone=/^[0-9]{10}/
 
     //This condition checks validation for fname
     if (fname.value.match(checkNameUser)) {
@@ -65,6 +71,7 @@ const signUpValidation=()=>{
         // fNameErr.textContent="Please enter a valid name";
         fNameErr.innerHTML="Please enter a valid first name";
         fNameErr.style.border="1px solid red";
+        return false
     }
     //This condition checks validation for lname
     if (lname.value.match(checkNameUser)) {
@@ -73,26 +80,28 @@ const signUpValidation=()=>{
         lname.style.border="1px solid red";
         lNameErr.innerHTML="Please enter a last name";
         lNameErr.style.border="1px solid red";
-        
+        return false
     }
 
-    //This condition checks validation for email
-    if (checkusername.test(username.value)) {
+    //This condition checks validation for username
+    if (username.value.match(checkusername)) {
         username.style.border="1px solid green";
     } else {
        
         username.style.border="1px solid red";
         sEmailErr.innerHTML="Please enter a email";
         sEmailErr.style.border="1px solid red";
+        return false
     }
 
     //This condition checks validation for phone
-    if (checkPassword.test(password.value)==true) {
+    if (password.value.match(checkPassword)) {
         password.style.border="1px solid blue";
     } else {
         password.style.border="1px solid red";
         sPasswordErr.innerHTML="Please enter a valid password";
         sPasswordErr.style.border="1px solid red";
+        return false
     }
 
     //This condition checks validation for password
@@ -103,7 +112,10 @@ const signUpValidation=()=>{
         phone.style.border="1px solid red";
         sPhoneErr.innerHTML="Please enter a phone number";
         sPhoneErr.style.border="1px solid red";
+        return false
     }
+
+    
 }
 
 

@@ -1,0 +1,74 @@
+extends layout
+block content
+    .admin-panel.clearfix
+      .slidebar
+        ul
+          li
+            a#targeted(href="#dashboard")
+            | Administrator
+          li
+            a(href="/farmer/pAdd") Add Products
+          li
+            a(href="/farmer/pDash") View Products
+          li
+            a(href="/farmer/Order") Orders                 
+          li
+            a(href="#Report") Report
+          li
+            a(href="#Logout") Logout
+      .dash_display
+        header.card-header
+        
+             form(name="pAdd" action="/farmer/pAdd" method="POST" enctype="multipart/form-data")
+                h4.card-title Welcome
+                .form-row
+                  .col-md-6.mb-3
+                    label Product Name:
+                    input.form-control(type="text" value="" name="pName")
+                  .col-md-6.mb-3
+                    label Category:
+                    select.custom-select(name="pCategory")
+                      option( value="Organic") Organic
+                      option( value="Non-Organic") Non-Organic
+                .form-row
+                  .col-md-4.mb-3  
+                    label Ward:
+                    select.custom-select(name="ward")
+                      option( value="Masajja") Masajja
+                      option( value="Organic") makindye
+                      option( value="Organic") busabala
+                      option( value="Organic") bunamwaya
+                  .col-md-4.mb-3
+                    label Unit Price:
+                    input.form-control(type="number" name="pUnitPrice")
+                  .col-md-4.mb-3
+                    label Quantity:
+                    input.form-control(type="number" name="pQuantity")
+                .form-row
+                  .col-md-6.mb-3
+                      label Payment Mode:
+                      br
+                      input(type="checkbox" checked name="paymentMode" value="Cash on Delivery")
+                      label Cash on Delivery
+                      input(type="checkbox" checked name="paymentMode" value="Mobile Money")
+                      label Mobile Money
+                      input(type="checkbox" checked name="paymentMode" value="Other")
+                      label Other 
+                  .col-md-6.mb-3 
+                      label Delivery Mode:
+                      br
+                      input(type="checkbox" checked name="deliveryMode" value="Pick Up")
+                      label Pick Up
+                      input(type="checkbox" checked name="deliveryMode" value="Home Delivery")
+                      label Home Delivery
+                .form-row
+                  .col-md-4.mb-3
+                    label Date Added:
+                    input.form-control(type="date" value="" name="pdate") 
+                  .col-md-4.mb-3
+                    label Add product picture:
+                    input(type="file" name="prodImage")
+                    input(type="submit" name="uploadImage" value="Upload")
+                .form-row                                          
+                  button.btn.btn-primary.btn-block(type="submit" value="submit") Submit product details
+        
