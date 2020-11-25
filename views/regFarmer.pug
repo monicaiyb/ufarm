@@ -4,17 +4,17 @@ block content
           .col-2
           .col-8
             h2
-            form.form_main(method="post" action="/fo")
+            form.form_main(method="post" action="/register")
                   h4 Create account
                   
                   .form-row
-                    .col-m
+                    .col-md-4
                       label First Name:
-                      input#reg_fname.name(type="text" placeholder="First Name" name="reg_fname")
-                    .col
+                      input#reg_fname.name(type="text" placeholder="First Name" name="fname")
+                    .col-md-4
                       label Last Name:
-                      input#reg_lname.name(type="text" placeholder="Last Name" name="reg_lname")
-                    .col
+                      input#reg_lname.name(type="text" placeholder="Last Name" name="lname")
+                    .col-md-4
                       label username:
                       input#username.name(type="text" placeholder="Username" name="username")                    
                   .form-row
@@ -23,42 +23,49 @@ block content
                       input#reg_dob.name(type="date" placeholder="" name="reg_dob")
                     .col
                       label Phone Number:
-                      input#reg_phone(type="tel" placeholder="Phone Number" name="reg_phone")
+                      input#reg_phone.name(type="tel" placeholder="P" name="reg_phone")
                     .col
                       label ID Number:
-                      input#reg_id(type="text" placeholder="ID Number" name="reg_id")             
+                      input#reg_id.name(type="text" placeholder="ID Number" name="reg_id")             
                   .form-row
                     .col
                       label Date of Registration:
-                      input.reg_date(type="date" placeholder="Date of Registration" name="reg_date")
-                    .col.form-group
-                      | Gender:
-                      input#gender1(type="radio" name="gender" value="male"  )&nbsp
-                      label.gender(for="gender1") &nbsp Male &nbsp
-                      input#gender2(type="radio" name="gender" value="female") &nbsp
-                      label.gender(for="gender2") &nbsp Female
-                    .col.form-group
+                      input#reg_date.name(type="date" placeholder="Date of Registration" name="reg_date")
+                    .col
+                      h4 Gender:
+                      label.form-check.form-check-inline
+                      input.form-check-input(type="radio" id="female" name="gender" value="female")
+                      span.form-check-label(for="female") Female 
+                      label.form-check.form-check-inline
+                      input.form-check-input(type="radio" id="male" name="gender" value="male")
+                      span.form-check-label(for="male") Male                  
+                    .col
                       label Farmer Ward
-                      select.ward(name="ward")
+                      select#ward.name(name="ward")
                         option(value="masaja") masaja
                         option(value="makindye") makindye
                         option(value="busabala") busabala
                         option(value="bunamwaya") bunamwaya
                   .form-row
                     .col
+                  
                       h4 Products:
-                      input(type="checkbox" name="product" id="horticulture" value="Horticulture" )
-                      label(for="horticulture") Horticulture
-                      input(type="checkbox" name="product" id="poultry" value="poultry" )
-                      label(for="poultry") Poultry
-                      input(type="checkbox" name="product" id="dairy" value="Dairy" )
-                      label(for="dairy") Dairy
-                      input(type="checkbox" name="product" id="other" value="Others" )
-                      label(for="other") Others
+                      .form-check.form-check-inline
+                        input#inlineCheckbox1.form-check-input(type="checkbox" name="product" value="Horticulture" )
+                        label(for="inlineCheckbox1") Horticulture
+                      .form-check.form-check-inline
+                        input#inlineCheckbox2.form-check-input(type="checkbox" name="product" value="poultry" )
+                        label#form-check-label(for="poultry") Poultry
+                      .form-check.form-check-inline
+                        input#inlineCheckbox3.form-check-input(type="checkbox" name="product" value="Dairy" )
+                        label#form-check-label(for="inlineCheckbox3") Dairy
+                        .form-check.form-check-inline
+                        input#inlineCheckbox4.form-check-input(type="checkbox" name="product" value="Others" )
+                        label#form-check-label(for="inlineCheckbox4") Others
                   .form-row
                     .col
                       label(for="address") Address:
-                      input#address.address(type="text" name="address")
+                      input#address.name(type="text" name="address")
                     .col
                       label Resident type:
                       select#no_of_year.no_of_yr(name="no_of_year")
@@ -69,10 +76,9 @@ block content
                     .col
                       label Role:
                       select#role.role(name="role")
-                        option(value="Admin") Admin
-                        option(value="Agric Officer") Agric Officer
-                        option(value="Farmer One") Farmer One
-                        option(value="Farmer") Farmer
+                        option(value="A Officer") Agric Officer
+                        option(value="fo") Farmer One
+                        option(value="farmer") Farmer
                   .form-row
                     .col.form-group
                       label(for="reg_password") Create password

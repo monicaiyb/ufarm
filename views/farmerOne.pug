@@ -6,22 +6,126 @@ block content
           li
             a#targeted(href="#dashboard")
             | Administrator
+          
           li
-            a(href="/fo/farmerList") Add Farmer
+            a(href="/fo/farmerList") View FarmerOne
           li
-            a(href="#") Inspection
+            a(href="#Inspect") Inspection                
           li
-            a(href="#Inspect") Approve Farmers                
-          li
-            a(href="#Approve") Add Products
+            a(href="#Approve") Approve Products
           li
             a(href="#Repor") Report
           li
             a(href="#Logout") Logout
+          li
+            a(href="/fo")
+              // Trigger/Open The Modal
+              button#myBtn Add Farmer
+              // The Modal
+              #myModal.modal
+                // Modal content
+                .modal-content
+                  span.close ×
+                  h4 Create account
+                      form.form_main(name="regForm" method="post" action="/fo" onsubmit="return regFormValidation()")
+                            
+                            .form-row
+                              .col-md-4
+                                label First Name:
+                                input#reg_fname.name(type="text" placeholder="First Name" name="fname")
+                                span#error_reg_fname  
+                              .col-md-4
+                                label Last Name:
+                                input#reg_lname.name(type="text" placeholder="Last Name" name="lname")
+                                span#error_reg_lname
+                              .col-md-4
+                                label username:
+                                input#reg_username.name(type="text" placeholder="Username" name="username")
+                                span#error_reg_username
+                            .form-row
+                              .col
+                                label Date of birth:
+                                input#reg_dob.name(type="date" placeholder="" name="reg_dob")
+                                span#error_reg_dob
+                              .col
+                                label Phone Number:
+                                input#reg_phone.name(type="tel" placeholder="Phone Number" name="reg_phone")
+                                span#error_reg_phone
+                              .col
+                                label ID Number:
+                                input#reg_id.name(type="text" placeholder="ID Number" name="reg_id") 
+                                span#error_user            
+                            .form-row
+                              .col
+                                label Date of Registration:
+                                input#reg_date.name(type="date" placeholder="Date of Registration" name="reg_date")
+                                span#error_reg_date
+                              .col
+                                h4 Gender:
+                                label.form-check.form-check-inline
+                                input.form-check-input(type="radio" id="female" name="gender" value="female")
+                                span.form-check-label(for="female") Female 
+                                label.form-check.form-check-inline
+                                input.form-check-input(type="radio" id="male" name="gender" value="male")
+                                span.form-check-label(for="male") Male                  
+                              .col
+                                label Farmer Ward
+                                select#ward.name(name="ward")
+                                  option(value="masaja") masaja
+                                  option(value="makindye") makindye
+                                  option(value="busabala") busabala
+                                  option(value="bunamwaya") bunamwaya
+                            .form-row
+                              .col
+                                h4 Products:
+                                .form-check.form-check-inline
+                                  input#inlineCheckbox1.form-check-input(type="checkbox" name="product" value="Horticulture" )
+                                  label(for="inlineCheckbox1") Horticulture
+                                .form-check.form-check-inline
+                                  input#inlineCheckbox2.form-check-input(type="checkbox" name="product" value="poultry" )
+                                  label#form-check-label(for="poultry") Poultry
+                                .form-check.form-check-inline
+                                  input#inlineCheckbox3.form-check-input(type="checkbox" name="product" value="Dairy" )
+                                  label#form-check-label(for="inlineCheckbox3") Dairy
+                                  .form-check.form-check-inline
+                                  input#inlineCheckbox4.form-check-input(type="checkbox" name="product" value="Others" )
+                                  label#form-check-label(for="inlineCheckbox4") Others
+                            .form-row
+                              .col
+                                label(for="address") Address:
+                                input#address.name(type="text" name="address")
+                                span#error_address
+                              .col
+                                label Resident type:
+                                select#no_of_year.no_of_yr(name="no_of_year")
+                                  option(value="New") New Resident
+                                  option(value="Temporary") Temporary Resident
+                                  option(value="Permanent") Permanent Resident 
+                                
+                              .col
+                                label Role:
+                                select#role.role(name="role")
+                                  option(value="admin") Admin
+                                  option(value="aOfficer") Agric Officer
+                                  option(value="fo") Farmer One
+                                  option(value="ufarmer") Farmer
+                            .form-row
+                              .col.form-group
+                                label(for="reg_password") Create password
+                                input#reg_password.name(type="password" placeholder="Password" name="password")
+                                span#error_reg_password
+                            .form-row
+                              .col.form-group
+                                input#regButton.button(type="submit" value="Register")
         
       .dash_display
         header.card-header
         h4.card-title Welcome
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
+    script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
+    script(src="/js/modal.js")      
+
         
 
         

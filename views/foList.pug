@@ -20,26 +20,26 @@ block content
          header.card-header
           h4.card-title Welcome 
 
-            table.table
-              if registerFarmers.length
+          table.table
+              if fos.length
                 thead
                     tr
                         th Firstname
                         th Lastname
                         th gender
                         th ward
+                        th role
                         th 
                         th
                 tbody
-                  each registerFarmer in registerFarmers
+                  each fo in fos
                     tr
-                        td=registerFarmer.reg_fname
-                        td=registerFarmer.reg_lname
-                        td=registerFarmer.gender
-                        td=registerFarmer.ward
+                        td=fo.fname
+                        td=fo.lname
+                        td=fo.gender
+                        td=fo.ward
+                        td=fo.role
                         td  
-                            a(href='/update/'+registerFarmer._id) Update
+                            a(href='/update/'+fo._id) Update
                         td
-                            form(method="post" action='/farmerOne/delete')
-                                input(type="hidden", placeholder="", name="delete_id", value=registerFarmer._id)
-                                button.btn.btn-dark.btn-block(type="submit") Delete
+                          a(href='/update/'+fo._id) Update

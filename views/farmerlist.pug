@@ -4,7 +4,7 @@ block content
       .slidebar
         ul
           li
-            a(href="/farmerOne/registerFarmer") Add Farmer
+            a(href="") Add Farmer
           li
             a(href="#") Inspection
           li
@@ -32,13 +32,10 @@ block content
                 tbody
                   each fo in fos
                     tr
-                        td #{fo.reg_fname}
-                        td=fo.reg_lname
+                        td #{fo.fname}
+                        td=fo.lname
                         td=fo.gender
                         td=fo.ward
                         td  
-                            a(href='/update/'+fos._id) Update
+                            a(href='/fo/Update/'+fos._id) Update
                         td
-                            form(method="post" action='/fo/foList/delete')
-                                input(type="hidden", placeholder="", name="delete_id", value=fo._id)
-                                button.btn.btn-dark.btn-block(type="submit") Delete

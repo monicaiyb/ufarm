@@ -1,20 +1,25 @@
 extends layout
 block content
-    .row
+    .row#login_form
       .col-md-4
       .col-md-4.main
-        form(name="login" action="/login" method="POST" onsubmit="return loginValidation()")
+        form(name="login" action="/login" method="POST" onsubmit="")
           h2 Ufarm Login here.
           input#user_name.box(type="text" name="username" placeholder="Username")
           span#error_user
-          br
-          br
+          //- label 
+          //-   select#role.role(name="role")
+          //-       option(value="admin") Admin
+          //-       option(value="aOfficer") Agric Officer
+          //-       option(value="fo") Farmer One
+          //-       option(value="ufarmer") Farmer
+
+          
           input#password.box(type="password" name="password" placeholder="Password ")
           span#error_password
-          br
-          br
+          
           input#submitDetails(type="submit" name="submitDetails" value="Submit")
-          br
+         
           | Don't have an account 
           a(href="/signup") Contact Admin
       .col-md-4

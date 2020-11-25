@@ -3,22 +3,22 @@ const mongoose=require("mongoose");
 const passportLocalMongoose = require('passport-local-mongoose');
 
 const foSchema=new mongoose.Schema({
-    reg_fname:{
+    fname:{
         type:String,
         trim:true,
     },
-    reg_lname:{
+    lname:{
         type:String
     },
     username:{
         type:String,
         unique:true
     },
-    reg_dob:{
+    dob:{
         type:Date,
         trim:true,
     },
-    reg_phone:{
+    phone:{
         type:Number,
         trim:true,
     },
@@ -26,9 +26,11 @@ const foSchema=new mongoose.Schema({
         type:String,
         trim:true,
     },
+    
     reg_date:{
         type:Date,
         trim:true,
+        default:Date.now
     },
     gender:{type:String},
     ward:{type:String},
@@ -37,11 +39,13 @@ const foSchema=new mongoose.Schema({
     residence:{type:String},
     role: { 
         type: String, 
-        required: 'Please Enter a role' },
-    password:{type:String}
+        required: 'Please Enter a role',
+        enum:["admin","aOfficer","fo","ufarmer"],
+        default:"ufarmer"
+    },
+    // password:{type:String}
     });
-    
-    
+       
   
 
     foSchema.plugin(passportLocalMongoose);

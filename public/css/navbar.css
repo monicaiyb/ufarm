@@ -5,32 +5,33 @@ button{
     margin: 4px;
     float: right;
     border: none;
-    color: #5f381ff1; 
+    color: #fafafa; 
     
 }
 div .col{
-    margin: 0%;
-    padding: 0%;
+    margin: auto;
+    padding: auto;
 
 }
 
 .main{ 
-    padding:0px; 
-    margin-top: 0%;
+    padding:auto; 
+    margin-top:auto;
     font-family: 'Helvetica', serif; 
     font-size: 15px;
     background-color: #fafafa;
-    color: #5f381ff1;
-    box-shadow: 5px 5px 7px 5px  #3d3834f1; 
-      
+    color: #5f381ff1;      
 } 
 
 .main h1,h2,p{ 
     color: #5f381ff1;
     text-align:center; 
     font-family: 'Helvetica', serif; 
-    padding: 2px;  
+    padding: 2px;    
 } 
+.main #login{
+    margin-top: 100px;
+}
 label{
     font-family: 'Helvetica', serif;
     font-size: 15px;
@@ -42,7 +43,7 @@ input,select{
     width: 100%; 
     font-size: 15px; 
     padding: 2px; 
-    margin: 2px; 
+    margin: auto; 
     border: none; 
     border-bottom: 2px solid #5f381ff1; 
 } 
@@ -53,20 +54,20 @@ input[type=submit] {
     border: none; 
     color: white; 
     padding: 0px; 
-    margin: 1px 1px; 
+    margin: auto; 
     border-radius: 2%; 
 } 
 
 #story_div{
     background-color: rgba(131, 93, 86, 0.87);
     padding: 0%;
-    margin: 0 auto ;
+    margin: auto ;
 }
 
 /* Styling for farmers registration form */
 .form_main{
     padding:0px; 
-    margin-top: 0%;
+    margin-top: auto;
     font-family: 'Helvetica', serif; 
     box-shadow: 5px 5px 7px 5px  #5f381ff1; 
 }
@@ -99,27 +100,9 @@ input[type=submit] {
       transition: all 0.30s ease-in-out;
 }
 
-
-.radio-button{
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
- .gender {
-    margin-right: 1em;
-}
-
-
-  
-
   .ward{
     display: inline-block;
-    width: 50%;
+    width: 100%;
     height: 35px;
     padding: 0px 15px;
     cursor: pointer;
@@ -169,5 +152,43 @@ input[type=submit] {
           margin:0;
       }
   
-/* Styling for products category */
+/* styles for modals */
+.modal {
+    display: none; /* Hidden by default */
+    position: relative; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 30%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #888;
+    width: 28%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
 

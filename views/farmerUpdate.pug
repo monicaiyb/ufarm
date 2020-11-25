@@ -1,0 +1,92 @@
+extends layout
+block content
+    .admin-panel.clearfix
+      .slidebar
+        ul
+          li
+            a#targeted(href="#dashboard")
+            | Administrator
+          li
+            a(href="farmerList/fUpdate") Add Farmer
+          li
+            a(href="#") Inspection
+          li
+            a(href="#Inspect") Approve Farmers                
+          li
+            a(href="#Approve") Add Products
+          li
+            a(href="#Repor") Report
+          li
+            a(href="#Logout") Logout
+        
+      .dash_display
+          extends layout
+block content                 
+  header.card-header
+            h4.card-title Welcome 
+            form(method="post" action='/foUpdate?id=+product._id')
+              table.table
+                   thead.thead
+                    tr
+                        th Firstname
+                        td 
+                            input.form-control(value = fo.fName name ="fName")
+                    tr
+                        th Lastname
+                        td 
+                            input.form-control(value = fo.lName name ="lName")
+                    tr
+                        th Username
+                        td 
+                            input.form-control(value = fo.username name ="username")
+                    tr
+                        th Date of birth
+                        td
+                          input.form-control(value = fo.reg_dob name ="reg_dob")
+                    tr
+                        th Phone Number
+                        td
+                          input.form-control(value = fo.reg_phone name ="reg_phone")
+                    tr
+                        th NIN
+                        td
+                          input.form-control(value = fo.reg_id name ="reg_id")
+                    tr
+                        th Date of registration
+                        td
+                          input.form-control(value = fo.reg_date name ="reg_date")
+              
+                    tr
+                        th Gender
+                        td 
+                            label Male&nbsp
+                            input(value= "male" type="radio" checked = fo.gender==="male" name="gender") 
+                            label &nbspFemale&nbsp
+                            input(value= "female" type="radio" checked = fo.gender==="female" name="gender")
+                    tr
+                        th Farmer Ward
+                        td 
+                            select.form-control(name="ward")  
+                                option(value="masaja" selected = fo.ward === "masaja") Masaja
+                                option(value="makindye" selected = fo.ward === "makindye") Masaka
+                                option(value="busabala" selected = fo.ward === "busabala") Busabala
+                                option(value="bunamwaya" selected = fo.ward === "bunamwaya") Bunamwaya
+                    tr
+                        th Prouct Type
+                        td 
+                            label Horticulture&nbsp 
+                            input(value= "Horticulture" type="checkbox" checked =fo.product.includes('Horticulture') name="product")
+                            label &nbspPoultry&nbsp
+                            input(value= "Poultry" type="checkbox" checked =fo.product.includes('Poultry') name="product")
+                            label &nbspDairy&nbsp
+                            input(value= "Dairy" type="checkbox" checked =fo.product.includes('Dairy') name="product")
+                            label &nbspOthers&nbsp
+                            input(value= "Others" type="checkbox" checked =fo.product.includes('Others') name="product")
+                    tr
+                        th Address
+                        td 
+                            input.form-control(value = fo.address name ="address")
+                    
+                    tr
+                        td(colspan=2)
+                            button.btn.btn-dark.btn-block(type="submit") Update

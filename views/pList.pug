@@ -17,9 +17,9 @@ block content
           li
             a(href="#Logout") Logout
       .dash_display
-         header.card-header
-            h4.card-title Welcome 
-            table.table
+        header.card-header
+          h4.card-title Welcome 
+          table.table
               if products.length
                 thead
                     tr
@@ -29,20 +29,24 @@ block content
                         th ward
                         th Quantity
                         th Date
+                        th Image
                         th 
                         th
                 tbody
                   each product in products
                     tr
-                        td #{products.pName}
-                        td=products.pCategory
-                        td=products.pUnitPrice
-                        td=products.ward
-                        td=products.pQuantity
-                        td=products.pDate
+                        td #{product.pName}
+                        td=product.pCategory
+                        td=product.pUnitPrice
+                        td=product.ward
+                        td=product.pQuantity
+                        td=product.pDate
+                        td 
+                          img(src='/uploads/'+product.prodImage height='200px' width='200px')
+
                         td  
-                            a(href='/update/'+products._id) Update
+                            a(href='pList/pUpdate/'+product._id) Update
                         td
                             form(method="post" action='/farmer/delete')
                                 input(type="hidden", placeholder="", name="delete_id", value=products._id)
-                                button.btn.btn-dark.btn-block(type="submit") Delete
+                                button.btn.btn-dark.btn-block(type="submit") Del
