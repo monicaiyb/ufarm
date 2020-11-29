@@ -14,11 +14,11 @@ const foSchema=new mongoose.Schema({
         type:String,
         unique:true
     },
-    dob:{
+    reg_dob:{
         type:Date,
         trim:true,
     },
-    phone:{
+    reg_phone:{
         type:Number,
         trim:true,
     },
@@ -30,7 +30,7 @@ const foSchema=new mongoose.Schema({
     reg_date:{
         type:Date,
         trim:true,
-        default:Date.now
+    
     },
     gender:{type:String},
     ward:{type:String},
@@ -40,10 +40,8 @@ const foSchema=new mongoose.Schema({
     role: { 
         type: String, 
         required: 'Please Enter a role',
-        enum:["admin","aOfficer","fo","ufarmer"],
-        default:"ufarmer"
-    },
-    // password:{type:String}
+      },
+    password:{type:String}
     });
        
   

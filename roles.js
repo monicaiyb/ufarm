@@ -1,8 +1,8 @@
 
-const roles = {
+const role = {
     admin:'admin',
-    agricOfficer:'aOfficer',
-    farmerOne:'fo',
-    farmer:'ufarmer'
+    aOfficer:'aOfficer',
+    fo:'fo',
+    ufarmer:'ufarmer'
 }
-module.exports = roles
+module.exports = role

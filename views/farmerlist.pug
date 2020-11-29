@@ -3,24 +3,28 @@ block content
     .admin-panel.clearfix
       .slidebar
         ul
+                
           li
-            a(href="") Add Farmer
+            a(href="#dashboard")
+            | Administrator
           li
-            a(href="#") Inspection
+            a#targeted(href="/ao") Add Farmer one
           li
-            a(href="#Inspect") Approve Farmers                
+            a(href="/fo/farmerList") View Farmers
           li
-            a(href="#Approve") Add Products
+            a(href="/farmer/pList") View Products
           li
-            a(href="#Repor") Report
+            a(href="/farmer") Approve Products
           li
-            a(href="#Logout") Logout
+            a(href="#") Report
+          li
+            a(href="/logout") Logout
         
       .dash_display
         header.card-header
           h4.card-title Welcome 
         table.table
-          if fos.length
+          if farmers.length
                 thead
                     tr
                     th Firstname
@@ -30,12 +34,12 @@ block content
                     th 
                     th
                 tbody
-                  each fo in fos
+                  each farmer in farmers
                     tr
-                        td #{fo.fname}
-                        td=fo.lname
-                        td=fo.gender
-                        td=fo.ward
+                        td #{farmer.fname}
+                        td=farmer.lname
+                        td=farmer.gender
+                        td=farmer.ward
                         td  
-                            a(href='/fo/Update/'+fos._id) Update
+                            a(href='/fo/Update/'+farmer._id) Update
                         td

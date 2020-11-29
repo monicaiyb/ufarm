@@ -1,8 +1,8 @@
-extends layout
+xtends layout
 block content
     .admin-panel.clearfix
       .slidebar
-        ul
+         ul
           li
             a#targeted(href="#dashboard")
             | Administrator
@@ -19,4 +19,14 @@ block content
         
       .dash_display
         header.card-header
-        h4.card-title Welcome
+            h4.card-title Welcome 
+            form(method="post" action='/ao/foupdate')
+                table.table
+                .form-row
+                  .col
+                    thead.thead
+                    .form-row
+                      .col-md-4.mb-3 
+                        tr
+                            th Product Name
+                            td 

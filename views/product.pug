@@ -1,26 +1,30 @@
 extends layout
 block content
-    main
-        | Massajja farmers beyayala ku UFARM
-
-        ul.list-unstyled
-        if products.length
-        each product in products
-            li.media
-              
-                img(src='/uploads/'+product.prodImage height='200px' width='200px')
-                .media-body
-                  h5.mt-0.mb-1 #{product.pName}
-                  |        Donec lacinia congue felis in faucibus.
-          
-            .card.mb-3(style="max-width: 540px;")
-              .row.no-gutters
+    div#product
+      |Massajja farmers beyayala ku UFARM
+      .form-row
+        div.col.form-group.col   
+          form.search(action='/')
+            div.form-row
+                    div.col-md-8
+                        input.name(name='pName' placeholder="Search product by product name...")
+                    div.col-md-2
+                        input.btn.btn-dark.btn-block(type="submit" value="search") 
+          .row
+            if products.length
+              each product in products
                 .col-md-4
-                  img.card-img(src="..." alt="...")
-                .col-md-8
-                  .card-body
-                    h5.card-title Card title
-                    p.card-text
-                      | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                    p.card-text
-                      small.text-muted Last updated 3 mins ago
+                  .card-deck
+                    .card
+                      img.card-img-top(src='/uploads/'+product.prodImage height='200px' width='200px')
+                      .card-body
+                      p.card-title Fresh juicy tomatomatoes #{product.pName}
+                        p.card-text Price UGX #{product.pUnitPrice}
+                        p.card-text Availabe Quantity #{product.pQuantity}
+                        p.card-text Pay using: #{product.paymentMode}
+                        p.text Delivery Mode:#{product.deliveryMode}
+  
+                      .card-footer
+                        small.text-muted Added on #{product.pdate}
+                        button(type="button" class="btn btn-success btn-sm") Order
+                        button(type="button" class="btn btn-info btn-sm") Book

@@ -15,7 +15,7 @@ block content
           li
             a(href="#Report") Report
           li
-            a(href="#Logout") Logout
+            a(href="/logout") Logout
       .dash_display
         header.card-header
           h4.card-title Welcome 
@@ -31,7 +31,8 @@ block content
                         th Date
                         th Image
                         th 
-                        th
+                        
+                        
                 tbody
                   each product in products
                     tr
@@ -43,10 +44,12 @@ block content
                         td=product.pDate
                         td 
                           img(src='/uploads/'+product.prodImage height='200px' width='200px')
+                        td=product.pStatus
 
                         td  
-                            a(href='pList/pUpdate/'+product._id) Update
-                        td
-                            form(method="post" action='/farmer/delete')
-                                input(type="hidden", placeholder="", name="delete_id", value=products._id)
-                                button.btn.btn-dark.btn-block(type="submit") Del
+                            a(href='pList/pUpdate/'+product._id) Details
+                      
+                        //- td
+                        //-     form(method="post" action='/farmer/delete')
+                        //-         input(type="hidden", placeholder="", name="delete_id", value=products._id)
+                        //-         button.btn.btn-dark.btn-block(type="submit") Del

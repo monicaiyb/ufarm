@@ -17,11 +17,9 @@ username:{
 },
 role:{
     type: String, 
-    required: 'Please Enter a role',
-    enum:["admin","aOfficer","fo","ufarmer"],
-        default:"ufarmer"
-},
-phone:{
+    required: 'Please Enter a role'
+  },
+reg_phone:{
     type:String,
     trim:true,
 },

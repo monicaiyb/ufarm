@@ -9,27 +9,19 @@ html(lang="en")
     link(type="text/css" rel="stylesheet" href="/css/css_bootsrap/bootstrap.min.css")
     script(src="/js/script.js")
 	  
-    .container-fluid
-      nav.navbar.navbar-expand-lg.navbar-light.bg-light
-        .logo
-          p
-            img.logo_img(src="/images/cow_logo.png" alt="logo")
-            span UFARM
-        .nav
-          ul
-            li
-              a(href="/")
-                span.home HOME
-            li
-              a(href="#") ABOUT
-            li
-              a(href="#") PRODUCT
-            li
-              a(href="#") FARMERS
-            li
-              a(href="#") CONTACT
-            
-              a(href="/login")
-                span.sin Farmers Login
-
+  body
+      nav.navbar.navbar-expand-lg.navbar-light.bg-success
+        ul.nav.justify-content-end
+                .logo
+                    img.logo_img(src="/images/cow_logo.png" alt="logo")
+                    span UFARM       
+                li.nav-item
+                  a.nav-link.active(href="#") Products
+                li.nav-item
+                  a.nav-link(href="#") About
+                li.nav-item
+                  a.nav-link(href="#") Farmers
+                li.nav-item
+                  a.nav-link(href="#") Contact us
+      .container
       block content

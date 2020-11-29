@@ -56,19 +56,19 @@ const regFormValidation=()=>{
     const regPasswordErr=document.getElementById("error_reg_password");
 
     //This condition checks validation for fname
-    let checkNameUser=/^[a-zA-Z]+$/;
-    if (!fname.value.match(checkNameUser)) {
+    let checkfName=/^[a-zA-Z]+$/;
+    if (!fname.value.match(checkfName)) {
         fname.style.border="1px solid red";
         fNameErr.innerHTML="first name should be alphabetic characters only";
-        fNameErr.style.border="1px solid red";
+        fNameErr.style.color="red";
         return false
     }
     //This condition checks validation for lname
-    let checkNameUser=/^[a-zA-Z]+$/;
-    if (!lname.value.match(checkNameUser)) {
+    let checklName=/^[a-zA-Z]+$/;
+    if (!lname.value.match(checklName)) {
         lname.style.border="1px solid red";
         lNameErr.innerHTML="last name should be alphabetic characters only";
-        lNameErr.style.border="1px solid red";
+        lNameErr.style.color="red";
         return false
     }
     //This condition checks validation for username
@@ -76,44 +76,44 @@ const regFormValidation=()=>{
     if (!username.value.match(checkusername)) {      
         username.style.border="1px solid red";
         regUsernameErr.innerHTML="Make sure you enter correct username format";
-        regUsernameErr.style.border="1px solid red";
+        regUsernameErr.style.color="red";
         return false
     }
 
     //This condition checks validation for phone
-    let checkDob=/^/
-    if (!reg_dob.value.match(checkDob)) {
-        reg_dob.style.border="1px solid red";
-        regDobErr.innerHTML="User must be 18 and above";
-        regDobErr.style.border="1px solid red";
-        return false
-    }
-    let checkPhone=/^[0-9]{10}/
+    // let checkDob=/^/
+    // if (!reg_dob.value.match(checkDob)) {
+    //     reg_dob.style.border="1px solid red";
+    //     regDobErr.innerHTML="User must be 18 and above";
+    //     regDobErr.style.border="1px solid red";
+    //     return false
+    // }
+    let checkPhone=/^[0-9]/
     if (!reg_phone.value.match(checkPhone)) {
         reg_phone.style.border="1px solid red";
         regPhoneErr.innerHTML="Please enter a valid password";
-        regPhoneErr.style.border="1px solid red";
+        regPhoneErr.style.color="red";
         return false
     }
-    let checkId=/^[0-9]{13}/
+    let checkId=/^[0-9a-zA-Z]{13}/
     if (!reg_id.value.match(checkId)) {
         reg_id.style.border="1px solid red";
-        regIdErr.innerHTML="Please enter a valid password";
-        regIdErr.style.border="1px solid red";
+        regIdErr.innerHTML="Please check your Id";
+        regIdErr.style.color="red";
         return false
     }
-    let checkRegDate=/^[0-9]{10}/
-    if (!reg_date.value.match(checkRegDate)) {
-        reg_date.style.border="1px solid red";
-        regDateErr.innerHTML="Please enter a valid password";
-        regDateErr.style.border="1px solid red";
-        return false
-    }
+    
+    // if (!reg_date.value="dd/mm/yyyy") {
+    //     reg_date.style.border="1px solid red";
+    //     regDateErr.innerHTML="Please check date";
+    //     regDateErr.style.border="1px solid red";
+    //     return false
+    // }
     let checkAddress=/^[0-9a-zA-Z]+$/
     if (!address.value.match(checkAddress)) {
         address.style.border="1px solid red";
-        addressErr.innerHTML="Please enter a valid password";
-        addressErr.style.border="1px solid red";
+        addressErr.innerHTML="Please check your Address";
+        addressErr.style.color="red";
         return false
     }
     //This condition checks validation for password
@@ -121,13 +121,13 @@ const regFormValidation=()=>{
     if(!password.value.match(checkPassword)) {
         password.style.border="1px solid red";
         regPasswordErr.innerHTML="Please enter a valid password";
-        regPasswordErr.style.border="1px solid red";
+        regPasswordErr.style.color="red";
         return false
     }
-    else{
+else{
         alert("User added in successfully");
         return true;
-}
+}    
     
 }
 

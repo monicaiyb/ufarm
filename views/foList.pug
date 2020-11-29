@@ -4,17 +4,20 @@ block content
       .slidebar
         ul
           li
-            a#targeted(href="/ao/aoregister") Add Farmer one
+            a#targeted(href="#dashboard")
+            | Administrator
           li
-            a(href="#") Manage Farmer One
+            a#targeted(href="/ao") Add Farmer one
           li
-            a(href="#") Manage Farmers
+            a(href="/ao/foList") Manage Farmer One
           li
-            a(href="#") Manage Products
+            a(href="/fo/farmerList") Manage Farmers
+          li
+            a(href="/farmer/pList") Manage Products
           li
             a(href="#") Report
           li
-            a(href="#") Logout
+            a(href="/logout") Logout
         
       .dash_display
          header.card-header
@@ -30,7 +33,6 @@ block content
                         th ward
                         th role
                         th 
-                        th
                 tbody
                   each fo in fos
                     tr
@@ -40,6 +42,4 @@ block content
                         td=fo.ward
                         td=fo.role
                         td  
-                            a(href='/update/'+fo._id) Update
-                        td
-                          a(href='/update/'+fo._id) Update
+                            a(href='/ao/foupdate/'+fo._id) Details

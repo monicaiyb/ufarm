@@ -8,17 +8,14 @@ button{
     color: #fafafa; 
     
 }
-div .col{
-    margin: auto;
-    padding: auto;
-
-}
 
 .main{ 
-    padding:auto; 
-    margin-top:auto;
+    padding:2%; 
+    margin-top:100%;
+    border-radius:1% ;
+    margin: auto;
     font-family: 'Helvetica', serif; 
-    font-size: 15px;
+    font-size: 100%;
     background-color: #fafafa;
     color: #5f381ff1;      
 } 
@@ -29,20 +26,18 @@ div .col{
     font-family: 'Helvetica', serif; 
     padding: 2px;    
 } 
-.main #login{
-    margin-top: 100px;
-}
+
 label{
     font-family: 'Helvetica', serif;
-    font-size: 15px;
+    font-size: 100%;
     font-weight: bold;
     color:#5f381ff1;
 }
 input,select{ 
     font-family: 'Helvetica', serif; 
     width: 100%; 
-    font-size: 15px; 
-    padding: 2px; 
+    font-size: 100%; 
+    padding: 0.5%; 
     margin: auto; 
     border: none; 
     border-bottom: 2px solid #5f381ff1; 
@@ -53,7 +48,7 @@ input[type=submit] {
     background-color: #5f381ff1; 
     border: none; 
     color: white; 
-    padding: 0px; 
+    padding: 0.5%; 
     margin: auto; 
     border-radius: 2%; 
 } 
@@ -69,12 +64,12 @@ input[type=submit] {
     padding:0px; 
     margin-top: auto;
     font-family: 'Helvetica', serif; 
-    box-shadow: 5px 5px 7px 5px  #5f381ff1; 
+    border:  #5f381ff1; 
 }
 .form_main input{ 
     font-family: 'Helvetica', serif; 
     width: 100%; 
-    font-size: 15px; 
+    font-size: 100%; 
     border: none; 
     border-bottom: 2px solid #5f381ff1; 
 }
@@ -85,41 +80,30 @@ input[type=submit] {
 
 .text-name{
     width: 100%;
-    padding:8px 0 8px 40px;
+    
 }
 
 .username{
-    padding: 8px;
+    padding: 2%;
 }
 .text-name, .name{
-    border: 1px solid #cccccc;
+    border-bottom: 2px solid #5f381ff1;
     outline: none;
-    -webkit-transition: all 0.30s ease-in-out;
-      -moz-transition: all 0.30s ease-in-out;
-      -ms-transition: all 0.30s ease-in-out;
-      transition: all 0.30s ease-in-out;
+
 }
 
   .ward{
     display: inline-block;
     width: 100%;
-    height: 35px;
-    padding: 0px 15px;
-    cursor: pointer;
-    color: #7b7b7b;
-    border: 1px solid #cccccc;
-    border-radius: 0;
-    background: #fff;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    transition: all 0.2s ease;
+    
+    
+   
 }
 
 
 
   .button{
-    background:#f5ba1a;
+    background:#28a745;
     height: 35px;
     line-height: 35px;
     width: 100%;
@@ -132,20 +116,20 @@ input[type=submit] {
     
   }
   .button:hover{
-      background-color: #f8c22e;
+      background-color: #28a745;
   }
   .button:hover{
-      background-color: #f8c22e;
+      background-color: #28a745;
   }
 
 
       .input-name{
-          margin-bottom: -10px;
+          margin-bottom: auto;
       }
       .name{
           width: 100%;
-          padding:8px 0 8px 40px;
-          margin-bottom: 10px;
+          padding:auto;
+          margin-bottom: auto;
       }
       .input-name span{
           padding: 0;
@@ -186,9 +170,16 @@ input[type=submit] {
   
   .close:hover,
   .close:focus {
-    color: black;
+    color: #28a745;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  div #product {
+      margin-top: auto;
+      padding: auto;
+      color: 5f381ff1;
+      
   }
   
 

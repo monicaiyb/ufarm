@@ -20,7 +20,7 @@ router.get('/product', async(req, res)=>{
         if (req.query.product) {
             items = await Pregister.find({ product: req.query.pName });
         }
-        res.render('pList', { products: items})
+        res.render('product', { products: items})
 
     }catch(err){
         res.status(400).send("Unable to find items in the database");

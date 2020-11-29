@@ -24,7 +24,8 @@ const loginRoutes =require("./routes/loginRoutes");
 const foRoutes=require("./routes/foRoutes");
 const farmerRoutes=require("./routes/farmerRoutes");
 const agricRoutes=require("./routes/agricRoutes");
-const custRoutes=require("./routes/customerRoutes")
+const custRoutes=require("./routes/customerRoutes");
+const adminRoutes=require("./routes/adminRoutes");
 // Import models
 const foregModel=require("./models/fo");
 const userModel=require("./models/user")
@@ -54,15 +55,28 @@ app.use("/fo",foRoutes);
 app.use("/farmer",farmerRoutes);
 app.use("/ao",agricRoutes);
 app.use("/customer",custRoutes)
+app.use("/admin",adminRoutes);
 // Route for home page
 app.get("/",(req,res)=>{
     res.render("index");
     console.log("Hello welcome my Ufarm project");
 })
-
-// app.get('*',(req,res)=>{
-//     res.send('error page')
-// })
+// logout
+app.post('/logout', (req, res) => {
+  if (req.session.user) {
+      req.session.destroy((err)=> {
+          if (err) {
+              console.log("failed to destroy session")
+          } else {
+              return res.redirect('/login');
+          }
+      })
+  }
+})
+//when an endpoint that does exist is hit
+app.get('*',(req,res)=>{
+    res.send('error page')
+})
   
 // created a server have it listen at port 3000
 app.listen(3000,()=>console.log("Listening at port 3000"));

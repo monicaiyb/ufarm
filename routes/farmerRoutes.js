@@ -5,15 +5,17 @@ const passport = require('passport');
 const multer = require('multer');
 path=require("path");
 // import models
-const farmer=require("../models/farmer");
+const Farmer=require("../models/fo");
 const Product=require("../models/product");
-const UserReg=mongoose.model("User");
+
+
 
 const router=express.Router();
 // importing database models
 
 const Foregister=mongoose.model("Fo");
 const Pregister=mongoose.model("product");
+const UserReg=mongoose.model("User");
 
 // Define storage location for photos
 const storage = multer.diskStorage({  
@@ -29,19 +31,20 @@ const upload = multer({
   }).single('prodImage');
 
 // Route to display farmer dashboard
-// router.get("/",(req,res)=>{
-//     if (req.session.user) {
-//     try{
+router.get("/",(req,res)=>{
+    req.session.user = req.user;
+    if (req.session.user) {
+    try{
        
-//         res.render("farmer", {currentUser:req.session.user});
+        res.render("farmer", {currentUser:req.session.user});
     
-//     }catch{
-//         console.log("Can't find session")
-//         res.redirect('/login')
-//     }
-// } 
+    }catch{
+        console.log("Can't find session")
+        res.redirect('/login')
+    }
+} 
 
-// });
+});
 
 // Route that Registers Productsfor farmer
 router.get("/pAdd",(req,res)=>{
@@ -93,10 +96,8 @@ router.get('/pUpdate/:_id',async(req,res)=>{
     }
 })
 
-// Deleting a farmer from database
-router.get("/delete",(req,res)=>{
-    res.render("pList");
-});
+// logout
+
 
 
 module.exports=router;

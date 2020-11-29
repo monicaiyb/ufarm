@@ -4,41 +4,41 @@ block content
       .slidebar
         ul
           li
-            a#targeted(href="#dashboard")
+            a(href="#dashboard")
             | Administrator
           li
-            a(href="farmerList/fUpdate") Add Farmer
+            a#targeted(href="/ao") Add Farmer one
           li
-            a(href="#") Inspection
+            a(href="/fo/farmerList") View Farmers
           li
-            a(href="#Inspect") Approve Farmers                
+            a(href="/farmer/pList") View Products
           li
-            a(href="#Approve") Add Products
+            a(href="/farmer") Approve Products
           li
-            a(href="#Repor") Report
+            a(href="#") Report
           li
-            a(href="#Logout") Logout
+            a(href="/logout") Logout
         
       .dash_display
           extends layout
 block content                 
   header.card-header
             h4.card-title Welcome 
-            form(method="post" action='/foUpdate?id=+product._id')
+            form(method="post" action='fo/fUpdate')
               table.table
                    thead.thead
                     tr
                         th Firstname
                         td 
-                            input.form-control(value = fo.fName name ="fName")
+                            input#disabledTextInput.form-control(value = fo.fName name ="fName")
                     tr
                         th Lastname
                         td 
-                            input.form-control(value = fo.lName name ="lName")
+                            input#disabledTextInput.form-control(value = fo.lName name ="lName")
                     tr
                         th Username
                         td 
-                            input.form-control(value = fo.username name ="username")
+                            input#disabledTextInput.form-control(value = fo.username name ="username")
                     tr
                         th Date of birth
                         td
@@ -50,7 +50,8 @@ block content
                     tr
                         th NIN
                         td
-                          input.form-control(value = fo.reg_id name ="reg_id")
+                          input#disabledTextInput
+                          .form-control(value = fo.reg_id name ="reg_id")
                     tr
                         th Date of registration
                         td

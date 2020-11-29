@@ -9,58 +9,67 @@ block content
           li
             a(href="/ao/foList") Manage Farmer One
           li
-            a(href="/fo/farmerList") Manage Farmers
+            a(href="/ao/farmerList") Manage Farmers
           li
-            a(href="/farmer/pList") Manage Products
+            a(href="/ao/pList") Manage Products
           li
 
             a(href="#") Report
            
           li
-            a(href="#") Logout
+            a(href="/logout") Logout
           li
-          // Trigger/Open The Modal
-          button#myBtn Open Modal
-          // The Modal
-          #myModal.modal
-            // Modal content
-            .modal-content
-              span.close ×
-               h4 Create account
-                  form.form_main(name="regForm" method="post" action="/ao" onsubmit="return regFormValidation()")
+                
+      .dash_display
+          form.form_main(name="regForm" method="post" action="/ao" onsubmit="return regFormValidation()")
                         
                         .form-row
                           .col-md-4
                             label First Name:
                             input#reg_fname.name(type="text" placeholder="First Name" name="fname")
+                            span#error_reg_fname
                           .col-md-4
                             label Last Name:
                             input#reg_lname.name(type="text" placeholder="Last Name" name="lname")
+                            span#error_reg_fname
                           .col-md-4
                             label username:
                             input#username.name(type="text" placeholder="Username" name="username")                    
+                            span#error_reg_username
                         .form-row
                           .col
                             label Date of birth:
                             input#reg_dob.name(type="date" placeholder="" name="reg_dob")
+                            span#error_reg_dob
                           .col
                             label Phone Number:
                             input#reg_phone.name(type="tel" placeholder="Phone Number" name="reg_phone")
+                            span#error_reg_phone
                           .col
                             label ID Number:
                             input#reg_id.name(type="text" placeholder="ID Number" name="reg_id")             
+                            span#error_reg_id
                         .form-row
                           .col
                             label Date of Registration:
                             input#reg_date.name(type="date" placeholder="Date of Registration" name="reg_date")
+                            span#error_reg_date
                           .col
                             h4 Gender:
-                            label.form-check.form-check-inline Female 
-                            input.form-check-input(type="radio" id="female" name="gender" value="female")
-                            | Female 
-                            label.form-check.form-check-inline Male 
-                            input.form-check-input(type="radio" id="male" name="gender" value="male")
-                            | Male                  
+                            .custom-control.custom-radio.custom-control-inline
+                                  input#customRadioInline1.custom-control-input(type="radio" name="gender" value="female")
+                                  label.custom-control-label(for="customRadioInline1") Female
+                            .custom-control.custom-radio.custom-control-inline
+                                  input#customRadioInline2.custom-control-input(type="radio" name="gender" value="male")
+                                  label.custom-control-label(for="customRadioInline2") Male  
+
+                            //- label.form-check.form-check-inline Female 
+                            //- input.form-check-input(type="radio" id="female" name="gender" value="female")
+                            //- | Female 
+                            //- label.form-check.form-check-inline Male 
+                            //- input.form-check-input(type="radio" id="male" name="gender" value="male")
+                            //- | Male   
+                            span#error_reg_gender             
                           .col
                             label Farmer Ward
                             select#ward.name(name="ward")
@@ -68,49 +77,60 @@ block content
                               option(value="makindye") makindye
                               option(value="busabala") busabala
                               option(value="bunamwaya") bunamwaya
+                            span#error_reg_ward
                         .form-row
                           .col
                         
                             h4 Products:
-                            .form-check.form-check-inline
-                              input#inlineCheckbox1.form-check-input(type="checkbox" name="product" value="Horticulture" )
-                              label(for="inlineCheckbox1") Horticulture
-                            .form-check.form-check-inline
-                              input#inlineCheckbox2.form-check-input(type="checkbox" name="product" value="poultry" )
-                              label(for="poultry") Poultry
-                            .form-check.form-check-inline
-                              input#inlineCheckbox3.form-check-input(type="checkbox" name="product" value="Dairy" )
-                              label#form-check-label(for="inlineCheckbox3") Dairy
-                              .form-check.form-check-inline
-                              input#inlineCheckbox4.form-check-input(type="checkbox" name="product" value="Others" )
-                              label#form-check-label(for="inlineCheckbox4") Others
+                            .custom-control.custom-checkbox
+                              input#customCheck1.custom-control-input(type="checkbox" name="product" value="Horticulture")
+                              label.custom-control-label(for="customCheck1") Horticulture
+                              input#customCheck1.custom-control-input(type="checkbox" name="product" value="poultry")
+                              label.custom-control-label(for="customCheck1") Poultry
+                              input#customCheck1.custom-control-input(type="checkbox" name="product" value="Dairy")
+                              label.custom-control-label(for="customCheck1") Dairy
+                              input#customCheck1.custom-control-input(type="checkbox" name="product" value="Others")
+                              label.custom-control-label(for="customCheck1") Others
+
+                            //- .form-check.form-check-inline
+                            //- input#inlineCheckbox1.form-check-input(type="checkbox" name="product" value="Horticulture" )
+                            //- label(for="inlineCheckbox1") Horticulture
+                            //- .form-check.form-check-inline
+                            //-   input#inlineCheckbox2.form-check-input(type="checkbox" name="product" value="poultry" )
+                            //-   label(for="poultry") Poultry
+                            //- .form-check.form-check-inline
+                            //-   input#inlineCheckbox3.form-check-input(type="checkbox" name="product" value="Dairy" )
+                            //-   label#form-check-label(for="inlineCheckbox3") Dairy
+                            //-   .form-check.form-check-inline
+                            //-   input#inlineCheckbox4.form-check-input(type="checkbox" name="product" value="Others" )
+                            //-   label#form-check-label(for="inlineCheckbox4") Others
+                              span#error_reg_product
                         .form-row
                           .col
                             label(for="address") Address:
                             input#address.name(type="text" name="address")
+                            span#error_reg_address
                           .col
                             label Resident type:
-                            select#no_of_year.no_of_yr(name="no_of_year")
-                              option(value="New") New Resident
-                              option(value="Temporary") Temporary Resident
-                              option(value="Permanent") Permanent Resident 
-                            
+                            select#disabledSelect.name(name="residence")
+                               option(value="Permanent") Permanent Resident 
+                            span#error_reg_residence
                           .col
                             label Role:
-                            select#role.role(name="role")
-                              option(value="admin") Admin
-                              option(value="aOfficer") Agric Officer
-                              option(value="fo") Farmer One
-                              option(value="farmer") Farmer
+                            label Role:
+                            select#disabledSelect.form-control.name(name="role")                                       
+                             option(value="fo") Farmer One
+                            
+                            span#error_reg_role
                         .form-row
                           .col.form-group
                             label(for="reg_password") Create password
                             input#reg_password.name(type="password" placeholder="Password" name="password") 
+                          span#error_reg_password
                         .form-row
                           .col.form-group
                             input#regButton.button(type="submit" value="Register")
-      .dash_display
-              p Some text in the Modal..
+             
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
     script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
