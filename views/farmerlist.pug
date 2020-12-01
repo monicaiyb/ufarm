@@ -19,7 +19,6 @@ block content
             a(href="#") Report
           li
             a(href="/logout") Logout
-        
       .dash_display
         header.card-header
           h4.card-title Welcome 
@@ -31,7 +30,9 @@ block content
                     th Lastname
                     th gender
                     th ward
-                    th 
+                    th phone
+                    th Birth Date
+                    th
                     th
                 tbody
                   each farmer in farmers
@@ -40,6 +41,8 @@ block content
                         td=farmer.lname
                         td=farmer.gender
                         td=farmer.ward
+                        td=farmer.reg_phone
+                        td=farmer.reg_dob
                         td  
-                            a(href='/fo/Update/'+farmer._id) Update
+                            a(href='/fo/fUpdate/'+farmer._id) Update
                         td

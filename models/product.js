@@ -24,6 +24,15 @@ const productSchema=new mongoose.Schema({
     pQuantity:{
         type:Number,
     },
+    farmerUserID:{
+        type:String,
+    },
+    pFphone:{
+        type:Number
+    },
+    pFdirections:{
+        type:String
+    },
     paymentMode:[{
         type: String,
     }],
@@ -32,7 +41,11 @@ const productSchema=new mongoose.Schema({
     }],
     prodImage:{ 
         type:String,
-    } 
+    },
+    status:{
+        type:Boolean,
+        default:false
+    }
 });
 
 

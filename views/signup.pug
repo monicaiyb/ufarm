@@ -7,11 +7,11 @@ block content
           h2  Signup form
           label First Name: 
           input#fname.name(type="text" name="fname" placeholder="")
-          span#fname_err
+          span#signFname_err
           br
           label Last Name:
           input#lname.name(type="text" name="lname" placeholder="" )
-          span#lname_err
+          span#signLname_err
           br
           label Username:
           input#username.name(type="username" name="username" placeholder="")
@@ -22,7 +22,7 @@ block content
           span#signup_phone_err
           br
           label Role:
-          select.form-control.name(name="role")                                       
+          select#signup_role.form-control.name(name="role")                                       
             option(value="aOfficer") Agric Officer 
             option(value="fo") Farmer One
             option(value="ufarmer") Urban Farmer

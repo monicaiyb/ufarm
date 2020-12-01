@@ -7,7 +7,7 @@ block content
             a(href="#dashboard")
             | Administrator
           li
-            a#targeted(href="/ao") Add Farmer one
+            a#targeted(href="/fo") Add Farmer
           li
             a(href="/fo/farmerList") View Farmers
           li
@@ -19,75 +19,87 @@ block content
           li
             a(href="/logout") Logout
         
-      .dash_display
-          extends layout
-block content                 
-  header.card-header
-            h4.card-title Welcome 
-            form(method="post" action='fo/fUpdate')
-              table.table
-                   thead.thead
-                    tr
-                        th Firstname
-                        td 
-                            input#disabledTextInput.form-control(value = fo.fName name ="fName")
-                    tr
-                        th Lastname
-                        td 
-                            input#disabledTextInput.form-control(value = fo.lName name ="lName")
-                    tr
-                        th Username
-                        td 
-                            input#disabledTextInput.form-control(value = fo.username name ="username")
-                    tr
-                        th Date of birth
-                        td
-                          input.form-control(value = fo.reg_dob name ="reg_dob")
-                    tr
-                        th Phone Number
-                        td
-                          input.form-control(value = fo.reg_phone name ="reg_phone")
-                    tr
-                        th NIN
-                        td
-                          input#disabledTextInput
-                          .form-control(value = fo.reg_id name ="reg_id")
-                    tr
-                        th Date of registration
-                        td
-                          input.form-control(value = fo.reg_date name ="reg_date")
-              
-                    tr
-                        th Gender
-                        td 
-                            label Male&nbsp
-                            input(value= "male" type="radio" checked = fo.gender==="male" name="gender") 
-                            label &nbspFemale&nbsp
-                            input(value= "female" type="radio" checked = fo.gender==="female" name="gender")
-                    tr
-                        th Farmer Ward
-                        td 
-                            select.form-control(name="ward")  
-                                option(value="masaja" selected = fo.ward === "masaja") Masaja
-                                option(value="makindye" selected = fo.ward === "makindye") Masaka
-                                option(value="busabala" selected = fo.ward === "busabala") Busabala
-                                option(value="bunamwaya" selected = fo.ward === "bunamwaya") Bunamwaya
-                    tr
-                        th Prouct Type
-                        td 
-                            label Horticulture&nbsp 
-                            input(value= "Horticulture" type="checkbox" checked =fo.product.includes('Horticulture') name="product")
-                            label &nbspPoultry&nbsp
-                            input(value= "Poultry" type="checkbox" checked =fo.product.includes('Poultry') name="product")
-                            label &nbspDairy&nbsp
-                            input(value= "Dairy" type="checkbox" checked =fo.product.includes('Dairy') name="product")
-                            label &nbspOthers&nbsp
-                            input(value= "Others" type="checkbox" checked =fo.product.includes('Others') name="product")
-                    tr
-                        th Address
-                        td 
-                            input.form-control(value = fo.address name ="address")
-                    
-                    tr
-                        td(colspan=2)
-                            button.btn.btn-dark.btn-block(type="submit") Update
+      .dash_display     
+                header.card-header
+                      h4.card-title Welcome 
+                      form(method="post" action="/fo/fUpdate?id="+farmer._id)
+                          table.table
+                          .form-row 
+                                  .col
+                                      thead.thead
+                                      .form-row
+                                        .col-md-4.mb-3 
+                                          tr
+                                              th Firstname
+                                              td #{farmer.fname}    
+                                        .col-md-4.mb-3 
+                                          tr
+                                              th Lastname
+                                              td #{farmer.lname}
+                                        .col-md-4.mb-3          
+                                          tr
+                                              th Username
+                                              td #{farmer.username}
+                                                  //- input#disabledTextInput.form-control(value = farmer.username name ="username")
+                                      .form-row
+                                        .col-md-4.mb-3   
+                                          tr
+                                              th Date of birth
+                                              td
+                                                input.form-control(type="date" value = farmer.reg_dob name ="reg_dob")
+                                        .col-md-4.mb-3 
+                                          tr
+                                              th Phone Number
+                                              td
+                                                input.form-control(type="number" value = farmer.reg_phone name ="reg_phone")
+                                        .col-md-4.mb-3   
+                                          tr
+                                              th NIN
+                                              td
+                                                input#disabledTextInput.form-control(value = farmer.reg_id name ="reg_id")
+                                      .form-row
+                                        .col-md-4.mb-3  
+                                          tr
+                                              th Date of registration
+                                              td
+                                                input.form-control(value = farmer.reg_date name ="reg_date")
+                                        .col-md-4.mb-3 
+                                          tr
+                                              th Gender
+                                              td 
+                                                  label Male&nbsp
+                                                  input(value= "male" type="radio" checked = farmer.gender==="male" name="gender") 
+                                                  label &nbspFemale&nbsp
+                                                  input(value= "female" type="radio" checked = farmer.gender==="female" name="gender")
+                                        .col-md-4.mb-3 
+                                          tr
+                                              th Farmer Ward
+                                              td 
+                                                  select.form-control(name="ward")  
+                                                      option(value="masaja" selected = farmer.ward === "masaja") Masaja
+                                                      option(value="makindye" selected = farmer.ward === "makindye") Makindy
+                                                      option(value="busabala" selected = farmer.ward === "busabala") Busabala
+                                                      option(value="bunamwaya" selected = farmer.ward === "bunamwaya") Bunamwaya
+                                      .form-row
+                                        .col-md-4.mb-3   
+                                          tr
+                                              th Prouct Type
+                                              td 
+                                                  label Horticulture&nbsp 
+                                                  input(value= "Horticulture" type="checkbox" checked =farmer.product.includes('Horticulture') name="product")
+                                                  label &nbspPoultry&nbsp
+                                                  input(value= "Poultry" type="checkbox" checked =farmer.product.includes('Poultry') name="product")
+                                                  label &nbspDairy&nbsp
+                                                  input(value= "Dairy" type="checkbox" checked =farmer.product.includes('Dairy') name="product")
+                                                  label &nbspOthers&nbsp
+                                                  input(value= "Others" type="checkbox" checked =farmer.product.includes('Others') name="product")
+                                        .col-md-4.mb-3 
+                                          tr
+                                              th Address
+                                              td 
+                                                  input.form-control(value = farmer.address name ="address")
+                                      .form-row
+                                        .col
+                                          tr
+                                              td(colspan=2)
+                                                  button.btn.btn-success.btn-block(type="submit") Update

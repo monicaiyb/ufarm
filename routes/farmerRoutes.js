@@ -7,7 +7,7 @@ path=require("path");
 // import models
 const Farmer=require("../models/fo");
 const Product=require("../models/product");
-
+const userModel = require("../models/user");
 
 
 const router=express.Router();
@@ -31,33 +31,42 @@ const upload = multer({
   }).single('prodImage');
 
 // Route to display farmer dashboard
-router.get("/",(req,res)=>{
+router.get("/",async(req,res)=>{
     req.session.user = req.user;
     if (req.session.user) {
     try{
-       
+        const userDetails = await UserReg.find()
         res.render("farmer", {currentUser:req.session.user});
     
     }catch{
-        console.log("Can't find session")
-        res.redirect('/login')
+        res.status(400).send('Sorry! Something went wrong.')
+        console.log(err)
     }
 } 
+else{
+    console.log("Can't find session")
+        res.redirect('/login')
+}
 
 });
 
 // Route that Registers Productsfor farmer
 router.get("/pAdd",(req,res)=>{
+    req.session.user = req.user;
     if (req.session.user) {
     try{
         
             res.render("pAdd", {currentUser:req.session.user});
     
     }catch{
+        res.status(400).send('Sorry! Something went wrong.')
+        console.log(err)
+    }
+    }
+    else{
         console.log("Can't find session")
         res.redirect('/login')
-    }
-    }    
+    }  
 });
 
 router.post("/pAdd",upload, async(req,res)=>{
@@ -76,6 +85,8 @@ router.post("/pAdd",upload, async(req,res)=>{
         }
 });
 router.get('/pList', async(req, res)=>{
+    if (req.session.user) {
+        req.session.user = req.user;
     try{
         let items = await Pregister.find()
         if (req.query.product) {
@@ -86,17 +97,40 @@ router.get('/pList', async(req, res)=>{
     }catch(err){
         res.status(400).send("Unable to find items in the database");
     }
+}
+else{
+    console.log("Can't find session")
+    res.redirect('/login') 
+}
 });
-router.get('/pUpdate/:_id',async(req,res)=>{
+router.get('/pUpdate/:id',async(req,res)=>{
+    if (req.session.user) {
+        req.session.user = req.user;
     try {
-        let item = await Pregister.findOne({ _id:req.params.id });
-        res.render('pUpdate',{ product: item});
+        const pUpdate=await Pregister.findOne({ _id: req.params.id });
+        res.render('pUpdate',{ product: pUpdate, currentUser: req.session.user});
     } catch (err) {
-        res.status(400).send("Unable to find item in the database");
+        res.status(404).send("Unable to find item in the database");
     }
+}
+else{
+    console.log("Can't find session")
+    res.redirect('/login') 
+}
 })
 
-// logout
+router.post('/pUpdate', async (req, res) => {
+    try {
+        // const items = new Foreg(req.body);
+        await Pregister.findOneAndUpdate({ _id: req.query.id }, req.body)
+        console.log(req.body)
+
+        res.redirect('/farmer/pList');
+    } catch (err) {
+        res.status(404).send("Unable to update item in the database");
+    }
+});
+
 
 
 

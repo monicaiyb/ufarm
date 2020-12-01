@@ -5,70 +5,90 @@ block content
         ul
           li
             a#targeted(href="#dashboard")
-            | Administrator
+            | Farmers Dashboard
           li
             a(href="/farmer/pAdd") Add Products
           li
             a(href="/farmer/pList") View Products
           li
             a(href="/farmer/Orders") Orders                 
-          li
-            a(href="#Report") Report
-          li
-            a(href="/logout") Logout
+          
       .dash_display
         header.card-header
         
-             form(name="pAdd" action="/farmer/pAdd" method="POST" enctype="multipart/form-data")
+             form(name="pAdd" action="/farmer/pAdd" method="POST" enctype="multipart/form-data" onsubmit="return productValidation()")
                 h4.card-title Welcome
-                .form-row
-                  .col-md-6.mb-3
-                    label Product Name:
-                    input.form-control(type="text" value="" name="pName")
-                  .col-md-6.mb-3
-                    label Category:
-                    select.custom-select(name="pCategory")
-                      option( value="Organic") Organic
-                      option( value="Non-Organic") Non-Organic
-                .form-row
-                  .col-md-4.mb-3  
-                    label Ward:
-                    select.custom-select(name="ward")
-                      option( value="Masajja") Masajja
-                      option( value="Organic") makindye
-                      option( value="Organic") busabala
-                      option( value="Organic") bunamwaya
-                  .col-md-4.mb-3
-                    label Unit Price:
-                    input.form-control(type="number" name="pUnitPrice")
-                  .col-md-4.mb-3
-                    label Quantity:
-                    input.form-control(type="number" name="pQuantity")
-                .form-row
-                  .col-md-6.mb-3
-                      label Payment Mode:
-                      br
-                      input(type="checkbox" checked name="paymentMode" value="Cash on Delivery")
-                      label Cash on Delivery
-                      input(type="checkbox" checked name="paymentMode" value="Mobile Money")
-                      label Mobile Money
-                      input(type="checkbox" checked name="paymentMode" value="Other")
-                      label Other 
-                  .col-md-6.mb-3 
-                      label Delivery Mode:
-                      br
-                      input(type="checkbox" checked name="deliveryMode" value="Pick Up")
-                      label Pick Up
-                      input(type="checkbox" checked name="deliveryMode" value="Home Delivery")
-                      label Home Delivery
-                .form-row
-                  .col-md-4.mb-3
-                    label Date Added:
-                    input.form-control(type="date" value="" name="pdate") 
-                  .col-md-4.mb-3
-                    label Add product picture:
-                    input(type="file" name="prodImage")
-                    //- input(type="submit" name="uploadImage" value="upload")
-                .form-row                                          
-                  button.btn.btn-primary.btn-block(type="submit" value="submit") Submit product details
-        
+                fieldset
+                      legend Products form
+                      .form-row
+                        .col-md-4.mb-3
+                          label Product Name:
+                          input.name(type="text" value="" name="pName")
+                          span#pnameErr
+                        .col-md-4.mb-3
+                          label Category:
+                          select.name(name="pCategory")
+                            option( value="Organic") Organic
+                            option( value="Non-Organic") Non-Organic
+                          span#pCategoryErr
+                        .col-md-4.mb-3
+                          label Add product picture:
+                          input(type="file" name="prodImage")
+                      .form-row
+                        .col-md-4.mb-3  
+                          label Ward:
+                          select.name(name="ward")
+                            option( value="Masajja") Masajja
+                            option( value="Organic") makindye
+                            option( value="Organic") busabala
+                            option( value="Organic") bunamwaya
+                          span#wardErr
+                        .col-md-4.mb-3
+                          label Unit Price:
+                          input.name(type="number" name="pUnitPrice")
+                          span#pUnitPriceErr
+                        .col-md-4.mb-3
+                          label Quantity:
+                          input.name(type="number" name="pQuantity")
+                          span#pQuantityErr         
+                      .form-row
+                          .col-md-4.mb-3
+                            label Payment Mode:
+                            input(type="checkbox" name="paymentMode" value="Cash on Delivery")
+                            label Cash on Delivery
+                            input(type="checkbox" name="paymentMode" value="Mobile Money")
+                            label Mobile Money
+                            input(type="checkbox" name="paymentMode" value="Other")
+                            label Other 
+                            span#paymentModeErr
+                          .col-md-4.mb-3 
+                            label Delivery Mode:
+                            input(type="checkbox" name="deliveryMode" value="Pick Up")
+                            label Pick Up
+                            input(type="checkbox" name="deliveryMode" value="Home Delivery")
+                            label Home Delivery
+                            span#deliveryModeErr
+                          .col-md-4.mb-3 
+                          .form-row
+                            .col-md
+                              label Farmers user ID:
+                              input.name(type="text" name="farmerUserID")
+                              span#farmerUserIDErr
+                          .form-row
+                            .col-md
+                              label Farmers Phone:
+                              input.name(type="Number" name="pFphone")
+                              span#pFphoneErr
+                          .form-row
+                            .col-md
+                              label Directions:
+                              input.name(type="text" name="pFdirections")
+                              span#pFdirectionsErr
+                      .form-row
+                        .col-md-4.mb-3
+                          label Date Added:
+                          input.name(type="date" value="" name="pdate") 
+                        
+                          //- input(type="submit" name="uploadImage" value="upload")
+                      .form-row                                          
+                        button.btn.btn-primary.btn-block(type="submit" value="submit") Submit product details 

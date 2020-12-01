@@ -18,12 +18,28 @@ block content
                     .card
                       img.card-img-top(src='/uploads/'+product.prodImage height='200px' width='200px')
                       .card-body
-                      p.card-title Fresh juicy tomatomatoes #{product.pName}
-                        p.card-text Price UGX #{product.pUnitPrice}
-                        p.card-text Availabe Quantity #{product.pQuantity}
-                        p.card-text Pay using: #{product.paymentMode}
-                        p.text Delivery Mode:#{product.deliveryMode}
-  
+                        .card-title #{product.pName}
+                        .card-text 
+                        table
+                          tr
+                            th Price UGX 
+                            td #{product.pUnitPrice}
+                          tr
+                            th  Quantity kg
+                            td #{product.pQuantity}
+                          tr 
+                            th Pay using: 
+                            td #{product.paymentMode}
+                          tr
+                            th Delivery Mode:
+                            td #{product.deliveryMode}
+                          tr
+                            th Farmer ID:
+                            td #{product.pFarmerID}
+                          tr
+                            th Contact:
+                            td #{product.pFphone}
+
                       .card-footer
                         small.text-muted Added on #{product.pdate}
                         button(type="button" class="btn btn-success btn-sm") Order

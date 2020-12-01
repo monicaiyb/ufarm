@@ -9,17 +9,12 @@ block content
           li
             a(href="/ao/foList") Manage Farmer One
           li
-            a(href="/ao/farmerList") Manage Farmers
+            a(href="/fo/farmerList") Manage Farmers
           li
-            a(href="/ao/pList") Manage Products
+            a(href="/farmer/pList") Manage Products
           li
-
-            a(href="#") Report
-           
-          li
-            a(href="/logout") Logout
-          li
-                
+            form(method="post" action='/logout') 
+              button.btn.btn-dark.btn-block(type="submit") Log out                
       .dash_display
           form.form_main(name="regForm" method="post" action="/ao" onsubmit="return regFormValidation()")
                         
@@ -82,29 +77,26 @@ block content
                           .col
                         
                             h4 Products:
-                            .custom-control.custom-checkbox
-                              input#customCheck1.custom-control-input(type="checkbox" name="product" value="Horticulture")
-                              label.custom-control-label(for="customCheck1") Horticulture
-                              input#customCheck1.custom-control-input(type="checkbox" name="product" value="poultry")
-                              label.custom-control-label(for="customCheck1") Poultry
-                              input#customCheck1.custom-control-input(type="checkbox" name="product" value="Dairy")
-                              label.custom-control-label(for="customCheck1") Dairy
-                              input#customCheck1.custom-control-input(type="checkbox" name="product" value="Others")
-                              label.custom-control-label(for="customCheck1") Others
-
-                            //- .form-check.form-check-inline
-                            //- input#inlineCheckbox1.form-check-input(type="checkbox" name="product" value="Horticulture" )
-                            //- label(for="inlineCheckbox1") Horticulture
-                            //- .form-check.form-check-inline
-                            //-   input#inlineCheckbox2.form-check-input(type="checkbox" name="product" value="poultry" )
-                            //-   label(for="poultry") Poultry
-                            //- .form-check.form-check-inline
-                            //-   input#inlineCheckbox3.form-check-input(type="checkbox" name="product" value="Dairy" )
-                            //-   label#form-check-label(for="inlineCheckbox3") Dairy
-                            //-   .form-check.form-check-inline
-                            //-   input#inlineCheckbox4.form-check-input(type="checkbox" name="product" value="Others" )
-                            //-   label#form-check-label(for="inlineCheckbox4") Others
+                            label Horticulture&nbsp 
+                            input(value= "Horticulture" type="checkbox"  name="product")
+                            label &nbspPoultry&nbsp
+                            input(value= "Poultry" type="checkbox"  name="product")
+                            label &nbspDairy&nbsp
+                            input(value= "Dairy" type="checkbox"  name="product")
+                            label &nbspOthers&nbsp
+                            input(value= "Others" type="checkbox"  name="product")
+                            span#error_reg_product
+                            //- .custom-control.custom-checkbox
+                            //-   input.custom-control-input(type="checkbox" name="product" value="Horticulture")
+                            //-   label.custom-control-label(for="customCheck1") Horticulture
+                            //-   input.custom-control-input(type="checkbox" name="product" value="poultry")
+                            //-   label.custom-control-label(for="customCheck1") Poultry
+                            //-   input.custom-control-input(type="checkbox" name="product" value="Dairy")
+                            //-   label.custom-control-label(for="customCheck1") Dairy
+                            //-   input.custom-control-input(type="checkbox" name="product" value="Others")
+                            //-   label.custom-control-label(for="customCheck1") Others
                               span#error_reg_product
+                           
                         .form-row
                           .col
                             label(for="address") Address:
@@ -112,7 +104,7 @@ block content
                             span#error_reg_address
                           .col
                             label Resident type:
-                            select#disabledSelect.name(name="residence")
+                            select.name(name="residence")
                                option(value="Permanent") Permanent Resident 
                             span#error_reg_residence
                           .col
@@ -131,9 +123,6 @@ block content
                           .col.form-group
                             input#regButton.button(type="submit" value="Register")
              
-    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
-    script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
-    script(src="/js/modal.js")      
+        
 
         

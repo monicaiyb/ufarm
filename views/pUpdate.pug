@@ -1,32 +1,67 @@
-xtends layout
+extends layout
 block content
     .admin-panel.clearfix
       .slidebar
-         ul
-          li
-            a#targeted(href="#dashboard")
-            | Administrator
+        ul
+          a#targeted(href="")
+            | Farmers Dashboard
           li
             a(href="/farmer/pAdd") Add Products
           li
             a(href="/farmer/pList") View Products
           li
-            a(href="/farmer/Order") Orders                 
-          li
-            a(href="#Report") Report
-          li
-            a(href="/logout") Logout
+            a(href="/farmer/Orders") Orders   
         
       .dash_display
         header.card-header
             h4.card-title Welcome 
-            form(method="post" action='/ao/foupdate')
+            form(method="post" action='/farmer/pUpdate?id='+product._id)
                 table.table
-                .form-row
-                  .col
-                    thead.thead
-                    .form-row
-                      .col-md-4.mb-3 
-                        tr
-                            th Product Name
-                            td 
+                  .form-row
+                   thead.thead List of Products
+                      .form-row
+                        .col-md-4.mb-3 
+                          tr
+                            th Product
+                              td #{product.pName} 
+                            th Product category
+                              td #{product.pCategory}
+                            th Ward
+                              td #{product.ward}
+                            th Farmer ID
+                              td #{product.farmerUserID}
+
+                          tr
+                            th Quantity
+                              td
+                                input.form-control(value = product.pQuantity name ="pQuantity")
+                            th Unit Price
+                              td 
+                                input.form-control(value = product.pUnitPrice name ="pUnitPrice")
+                            th Phone
+                              td 
+                                input.form-control(value = product.pFphone name ="pFphone")
+                          tr
+                            th Directions
+                              td #{product.pFdirections} 
+                            th Delivery:
+                              td 
+                                input(type="checkbox" name="deliveryMode" checked=product.deliveryMode.includes("Pick Up"))
+                                label Pick Up
+                                input(type="checkbox" name="deliveryMode" checked=product.deliveryMode.includes("Home Delivery"))
+                                label Home Delivery                              
+                            th Payment Mode
+                              td #{product.paymentMode}
+                          tr
+                            th Date Updated
+                              td #{product.date}
+                            th Image
+                              td 
+                                img(src='/uploads/'+product.prodImage height='200px' width='200px')
+                            th status
+                              td #{product.status}
+                          
+                          tr  
+                            th
+                              td
+                                button.btn.btn-success.btn-block(type="submit") Update

@@ -7,13 +7,13 @@ block content
             a(href="#dashboard")
             | Administrator
           li
-            a#targeted(href="/ao") Add Farmer one
+            a#targeted(href="/fo") Add Farmer
           li
             a(href="/fo/farmerList") View Farmers
           li
             a(href="/farmer/pList") View Products
           li
-            a(href="/farmer") Approve Products
+            a(href="/fo/pApprove") Approve Products
           li
             a(href="#") Report
           li
@@ -23,7 +23,7 @@ block content
       .dash_display
         header.card-header
         h4.card-title Welcome
-                              form.form_main(name="regForm" method="post" action="/fo" onsubmit="return regFormValidation()")
+        form.form_main(name="regForm" method="post" action="/fo" onsubmit="return regFormValidation()")
                             
                                   .form-row
                                     .col-md-4
@@ -58,13 +58,12 @@ block content
                                       span#error_reg_date
                                     .col
                                       h4 Gender:
-                                      span.form-check-label(for="female") Female 
-                                        label.form-check.form-check-inline
-                                        input.form-check-input(type="radio" id="female" name="gender" value="female")
-                                      span.form-check-label(for="male") Male  
-                                        label.form-check.form-check-inline
-                                        input.form-check-input(type="radio" id="male" name="gender" value="male")
-                                                      
+                                      .custom-control.custom-radio.custom-control-inline
+                                        input#customRadioInline1.custom-control-input(type="radio" name="gender" value="female")
+                                        label.custom-control-label(for="customRadioInline1") Female
+                                      .custom-control.custom-radio.custom-control-inline
+                                          input#customRadioInline2.custom-control-input(type="radio" name="gender" value="male")
+                                          label.custom-control-label(for="customRadioInline2") Male  
                                     .col
                                       label Farmer Ward
                                       select#ward.name(name="ward")
@@ -75,18 +74,15 @@ block content
                                   .form-row
                                     .col
                                       h4 Products:
-                                        .form-check.form-check-inline
-                                        input#inlineCheckbox1.form-check-input(type="checkbox" name="product" value="Horticulture" )
-                                        label(for="inlineCheckbox1") Horticulture
-                                        .form-check.form-check-inline
-                                        input#inlineCheckbox2.form-check-input(type="checkbox" name="product" value="poultry" )
-                                        label(for="poultry") Poultry
-                                        .form-check.form-check-inline
-                                        input#inlineCheckbox3.form-check-input(type="checkbox" name="product" value="Dairy" )
-                                        label(for="inlineCheckbox3") Dairy
-                                        .form-check.form-check-inline
-                                        input#inlineCheckbox4.form-check-input(type="checkbox" name="product" value="Others" )
-                                        label(for="inlineCheckbox4") Others
+                                      label Horticulture&nbsp 
+                                      input(value= "Horticulture" type="checkbox"  name="product")
+                                      label &nbspPoultry&nbsp
+                                      input(value= "Poultry" type="checkbox"  name="product")
+                                      label &nbspDairy&nbsp
+                                      input(value= "Dairy" type="checkbox"  name="product")
+                                      label &nbspOthers&nbsp
+                                      input(value= "Others" type="checkbox"  name="product")
+                                      span#error_reg_product
                                   .form-row
                                     .col
                                       label(for="address") Address:
@@ -111,11 +107,7 @@ block content
                                   .form-row
                                     .col.form-group
                                       input#foRegButton.button(type="submit" value="Register")
-    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
-    script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
-    script(src="/js/modal.js")
-
+    
         
 
         

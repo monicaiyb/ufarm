@@ -14,11 +14,7 @@ block content
             a(href="/fo/farmerList") Manage Farmers
           li
             a(href="/farmer/pList") Manage Products
-          li
-            a(href="#") Report
-          li
-            a(href="/logout") Logout
-        
+                  
       .dash_display
          header.card-header
           h4.card-title Welcome 
@@ -32,7 +28,10 @@ block content
                         th gender
                         th ward
                         th role
-                        th 
+                        th phone
+                        th regdate
+                        th products
+                        th
                 tbody
                   each fo in fos
                     tr
@@ -41,5 +40,8 @@ block content
                         td=fo.gender
                         td=fo.ward
                         td=fo.role
+                        td=fo.reg_phone
+                        td=fo.reg_date
+                        td=fo.product 
                         td  
-                            a(href='/ao/foupdate/'+fo._id) Details
+                            a(href='/ao/foupdate/'+fo._id) Update

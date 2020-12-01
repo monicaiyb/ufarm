@@ -11,17 +11,15 @@ button{
 
 .main{ 
     padding:2%; 
-    margin-top:100%;
+    margin:auto;
+    margin-top: 3%;
     border-radius:1% ;
-    margin: auto;
     font-family: 'Helvetica', serif; 
-    font-size: 100%;
-    background-color: #fafafa;
-    color: #5f381ff1;      
+    font-size: 100%;      
 } 
 
 .main h1,h2,p{ 
-    color: #5f381ff1;
+    color: #fafafa;
     text-align:center; 
     font-family: 'Helvetica', serif; 
     padding: 2px;    

@@ -2,19 +2,28 @@ extends layout
 block content
     .admin-panel.clearfix
       .slidebar
-         ul
-          a#targeted(href="")
-            | Farmers Dashboard
+        ul
           li
-            a(href="/farmer/pAdd") Add Products
+            a(href="#dashboard")
+            | Administrator
+          li
+            a#targeted(href="/ao") Add Farmer one
+          li
+            a(href="/fo/farmerList") View Farmers
           li
             a(href="/farmer/pList") View Products
           li
-            a(href="/farmer/Orders") Orders   
+            a(href="/farmer") Approve Products
+          li
+            a(href="#") Report
+          li
+            a(href="/logout") Logout
+
+        
       .dash_display
         header.card-header
-          h4.card-title Welcome 
-          table.table
+        h4.card-title Welcome
+        table.table
               if products.length
                 thead
                     tr
@@ -25,7 +34,8 @@ block content
                         th Quantity
                         th Added by
                         th Image
-                        th 
+                        th status
+                        th
                         th
                         
                         
@@ -38,9 +48,13 @@ block content
                         td=product.ward
                         td=product.pQuantity
                         td=product.farmerUserID
+                        
                         td   
                           img(src='/uploads/'+product.prodImage height='200px' width='200px')
                         td=product.pStatus
-
+                        td=product.status
                         td  
-                            a(href='/farmer/pUpdate/'+product._id) Details
+                            form(action="/fo/pApprove" method="post")
+                                input(type="hidden", placeholder="", name="status", value=product.status)
+                                button.btn.btn-success(type="submit") Approve
+                      

@@ -74,9 +74,9 @@ app.post('/logout', (req, res) => {
   }
 })
 //when an endpoint that does exist is hit
-app.get('*',(req,res)=>{
-    res.send('error page')
-})
+// app.get('*',(req,res)=>{
+//     res.send('error page')
+// })
   
 // created a server have it listen at port 3000
 app.listen(3000,()=>console.log("Listening at port 3000"));
