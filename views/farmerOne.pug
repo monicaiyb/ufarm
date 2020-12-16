@@ -15,14 +15,11 @@ block content
           li
             a(href="/fo/pApprove") Approve Products
           li
-            a(href="#") Report
-          li
-            a(href="/logout") Logout
-
-        
+            form(method="post" action='/logout') 
+              button.btn.btn-dark.btn-block(type="submit") Log out 
       .dash_display
         header.card-header
-        h4.card-title Welcome
+        h4.card-title Farmer Registration Form
         form.form_main(name="regForm" method="post" action="/fo" onsubmit="return regFormValidation()")
                             
                                   .form-row
@@ -107,7 +104,3 @@ block content
                                   .form-row
                                     .col.form-group
                                       input#foRegButton.button(type="submit" value="Register")
-    
-        
-
-        

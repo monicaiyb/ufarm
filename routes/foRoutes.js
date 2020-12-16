@@ -112,7 +112,7 @@ router.get('/pApprove', async (req, res) => {
         res.redirect('/login')
     }
 });
-router.post('/pApprove', async (res, req) => {
+router.post('/pApprove', async (req, res) => {
     try {
 
         const items = new Pregister(req.body);

@@ -33,6 +33,7 @@ section #carousel,#farmer,#contact{
     color: #f8f7f0;
     background-color:   #612903d2;
     margin: auto 0;
+    padding: auto 0;
 }
  .carousel-item img{
 

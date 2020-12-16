@@ -3,7 +3,7 @@ block content
     .row#login_form
       
       .main
-        form(name="login" action="/login" method="POST" onsubmit="")
+        form(name="login" action="/login" method="POST" onsubmit="return loginValidation()")
           h2 Ufarm Login here.
           input#user_name.box(type="text" name="username" placeholder="Username")
           span#error_user

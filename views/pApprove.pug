@@ -4,20 +4,16 @@ block content
       .slidebar
         ul
           li
-            a(href="#dashboard")
-            | Administrator
+            a#targeted(href="/ao") Add Farmer one    
           li
-            a#targeted(href="/ao") Add Farmer one
+            a(href="/ao/foList") Manage Farmer One
           li
-            a(href="/fo/farmerList") View Farmers
+            a(href="/fo/farmerList") Manage Farmers
           li
-            a(href="/farmer/pList") View Products
+            a(href="/farmer/pList") Manage Products
           li
-            a(href="/farmer") Approve Products
-          li
-            a(href="#") Report
-          li
-            a(href="/logout") Logout
+            form(method="post" action='/logout') 
+              button.btn.btn-dark.btn-block(type="submit") Log out  
 
         
       .dash_display

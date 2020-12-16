@@ -1,0 +1,40 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="newcss.css")
+    title Document
+  body
+    .grid-container
+      header#header.header
+        .header__search Search...
+        .header__avatar Your face
+      aside#sidenav.sidenav
+        ul.sidenav__list
+          li.sidenav__list-item Overview
+          li.sidenav__list-item Register a farmer One
+          li.sidenav__list-item Inspect farm
+          li.sidenav__list-item Approve products
+          li.sidenav__list-item View Registrations
+      main.main_dash
+        .main-header
+          .main-header__heading Hello User
+          .main-header__updates Recent Items
+        // // Main section responsive grid intro cards
+        .main-overview
+          .overviewcard
+            .overviewcard__icon Overview
+            .overviewcard__info Card
+          .overviewcard
+            .overviewcard__icon Overview
+            .overviewcard__info Card
+          .overviewcard
+            .overviewcard__icon Overview
+            .overviewcard__info Card
+          .overviewcard
+            .overviewcard__icon Overview
+            .overviewcard__info Card
+      footer#footer.footer
+        .footer__copyright © 2018 MTH
+        .footer__signature I copied code Made with love by pure genius

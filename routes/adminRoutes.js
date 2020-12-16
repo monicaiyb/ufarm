@@ -7,11 +7,28 @@ const router=express.Router();
 const UserReg=mongoose.model("User");
 
 // Route to sign an agric officer
-router.get("/",(req,res)=>{
-  res.render("signup");
+router.get("/signup", async (req, res) => {
+  req.session.user = req.user;
+  if (req.session.user) {
+      try {
+          const userDetails = await UserReg.find()
+          res.render("signup", { currentUser: req.session.user })
+      }
+      catch {
+          res.status(400).send('Sorry! Something went wrong.')
+          console.log(err)
+      }
+
+  } else {
+      console.log("Can't find session");
+      res.redirect('/login');
+  }
 });
-router.post("/", async (req, res) => {
-  // if (req.session.user) {
+// router.get("/",(req,res)=>{
+//   res.render("signup");
+// });
+router.post("/signup", async (req, res) => {
+  if (req.session.user) {
     try {
       const userDetail = new UserReg(req.body);
       console.log(userDetail);
@@ -26,10 +43,10 @@ router.post("/", async (req, res) => {
       res.status(400).send("Sorry! Something went wrong.");
       console.log(err);
     }
-  // }else {
-  //   console.log("Can't find session")
-  //   res.redirect('/login')
-  // }
+  }else {
+    console.log("Can't find session")
+    res.redirect('/login')
+  }
 });
 
 

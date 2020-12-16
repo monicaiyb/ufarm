@@ -19,7 +19,7 @@ router.post('/login', passport.authenticate('local',{failureRedirect: '/login'})
     
     const userRole = roles[req.user.role]
     if(userRole== 'admin'){
-          res.redirect('/admin');
+          res.redirect('/admin/signup');
         }
     else if(userRole == 'aOfficer'){
          res.redirect('/ao');
@@ -33,7 +33,8 @@ router.post('/login', passport.authenticate('local',{failureRedirect: '/login'})
     }
     // res.redirect('login');
  })
-   
+
+
 
 
 module.exports=router;
